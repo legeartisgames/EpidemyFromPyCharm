@@ -1,0 +1,41 @@
+[color=0cb315][b]For beginners[/color][/b]
+
+  - [ref=demo][u][color=e69719]Visual learning[/color][/ref][/u]: what you saw at the very beginning.
+
+  - [ref=11][u][color=e69719]Brief game help[/color][/ref][/u]: "consolidation" of visual learning.
+
+[color=c91e4c][b]Full rules[/b][/color] (at least scroll them!)
+
+  - [ref=1][u][color=e69719]General information[/color][/ref][/u]: what is the game about.
+
+  - [ref=2][u][color=e69719]Parameters in the game[/color][/ref][/u]: about game parameters and designations.
+
+  - [ref=3][u][color=e69719]How to play[/color][/ref][/u]: what the main game buttons do.
+
+  - [ref=4][u][color=e69719]"Additional" menu[/color][/ref][/u]: statistics, settings, etc.
+
+  - [ref=5][u][color=e69719]The structure of the region[/color][/ref][/u]: what is a hex and how to handle it.
+
+  - [ref=6][u][color=e69719]Penalty and victory points[/color][/ref][/u]: for what you get them.
+
+  - [ref=7][u][color=e69719]Rewards and progress[/color][/ref][/u]: the main goal of gaming.
+
+  - [ref=8][u][color=e69719]Charts in the game[/color][/ref][/u]: types of charts and how to plot them.
+
+  - [ref=9][u][color=e69719]Technical information[/color][/u][/ref]: ~ privacy policy.
+
+  - [ref=10][u][color=e69719]Tips on the game[/color][/u][/ref]: will you win without them?
+
+[color=5e8fc2][b]Additional materials[/b][/color] (we advise you to read them at least once):
+
+  - [ref=11][u][color=e69719]Brief game help[/color][/ref][/u]
+
+  - [ref=12][u][color=e69719]Information about infections[/color][/ref][/u]
+
+  - [ref=13][u][color=e69719]Information about countries[/color][/ref][/u]
+
+  - [ref=14][u][color=e69719]Information about game modes[/color][/ref][/u]
+
+  - [ref=15][u][color=e69719]FAQ[/color][/ref][/u]
+
+  - [ref=16][u][color=e69719]About application[/color][/ref][/u]

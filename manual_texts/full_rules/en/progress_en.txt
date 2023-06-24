@@ -1,0 +1,26 @@
+[b][color=e69719]Awards for finished games[/b][/color]
+
+    You get for each victory:
+
+ - (the number of reputation stars set for a given country (usually 5-15 stars) + infection difficulty level - 2) * reward multiplier of the game mode (see the section "Information about modes"). This number can be seen during the game in the "Statistics" / "Additional" section in the corresponding column.
+ - 7 times more coins of gold reserves
+
+    You get for every game you lose:
+ - (1 reputation star for every 15 game turns + infection difficulty level / 5) * mode reward multiplier. But in total you get no more than the number of stars for a victory - 1. The resulting number of stars can be fractional.
+ - 3 times more coins of gold and foreign exchange reserves.
+
+[b][color=e69719]Progress in the game[/b][/color]
+
+    "Epidemy: The Outbreak" will change with you after the games played - you accumulate reputation stars and gold and foreign exchange reserves that you need:
+
+- to increase the status of welfare or the status of reputation (while these statuses just let you understand how experienced you are).
+
+- to open new countries. Some countries (India, China and other) are available for you only if you have a sufficient number of reputation stars or gold reserves.
+
+- to discover new methods. The situation is similar with countries: Distance education, Propaganda and some other methods are not available in the beginning.
+
+- to unblock new infections. Bubonic plague becomes unblocked when you amass enough gold reserves.
+
+    Please note that if you convert gold reserves into assets (in one of the parties), then you will not be able to return them back. At the same time, you may lose the previously achieved wealth / reputation status or lose the opportunity to play for one of the countries or use one of the methods (until you collect enough stars or reserves again).
+
+    It is very convenient to track progress using the option [b][color=e69719]"Achievements panel"[/b][/color] (it is in the "Additional" / "Statistics" section). It shows your level (by stars or reserves) and the levels that will open a new country, status or method. 

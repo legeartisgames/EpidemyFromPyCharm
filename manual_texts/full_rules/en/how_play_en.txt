@@ -1,0 +1,35 @@
+[b][color=e69719]Game space.[/color][/b]
+Please note: the [b][color=e69719]button "Back"[/color][/b] (or its analogue) works throughout the game, it is very convenient to use it.
+
+[b][color=fca103]Scheme of the playing field.[/b][/color]
+    Your main field of play (what you see most often on your screen) consists of a country map and a small panel with different buttons, parameters, etc. The map can be enlarged or reduced by sliding your fingers across the screen. Consider the panel on the left.
+
+[b][color=e69719] - The left game panel.[/b][/color]
+    Panel contains 4 buttons / groups of buttons: “End turn”, “Methods panel”, “Multiple selection”, and “Additional”.
+
+    Pressing the first button ([b][color=e69719]"End turn"[/b][/color]) simply ends the turn. At the end of the turn, you receive the number of coins corresponding to your income. The number of ill and dead also changes and all game coefficients are recalculated: one-way effects disappear.
+    Keep in mind that z_out in "Epidemic" sometimes changes seasonally, do not be surprised that, for example, it will grow by January.
+
+    The second button [b][color=e69719]"Methods panel"[/b][/color], obviously, opens the methods panel (methods of fighting the epidemic, but for brevity we will just say "methods").
+    The methods enable you to fight the epidemic. Some can strengthen the country's economy, others can slow down the growth in the number of cases and can calm the country's citizens, etc.
+ 
+There are four different types of methods:
+  * [b][color=e69719]usual[/b][/color] (for example, "Scientific communication"): pay once for mastering the method that gives you bonuses constantly.
+  * [b][color=e69719]with activation[/b][/color] (for example, "Masks&Gloves"): methods that have both pros and cons. After mastering them, you can choose whether to use them or not (button "Activate" / "Deactivate" on the method card).
+  * [b][color=e69719]investments [/b][/color] (for example, "Hospital investments"): you can "get it" (that is, invest it) an unlimited number of times.
+  * [b][color=e69719]for the region [/b][/color] (for example, "Isolate!"):
+    first, these methods must be gotten and then they can be applied for an additional fee for some regions of the country.
+ 
+    The method panel consists of 12 methods in the beginning and it will increase with the increase in the number of gold reserves and reputation stars).
+
+    Pay attention to the text of the methods - it may differ from country to country, and it may also change during the game. So, the investment price increases by 1 with each next investment, and when investing in research, the price of each method decreases by 1 (in the basic situation).
+    
+    [color=f54245][b]Important![/b][/color]: recently there is a new mode for displaying method cards - [b][color=e69719]Scrolling method cards[/b][/color]. With it, you can take a close look at each method card. You can switch from one mode to another using a double tap (double tap). You can also return from the scrolling mode to the panel mode by pressing the "Back" button of your device.
+
+    The third button (i.e. the group of buttons [b][color=e69719]"Multiselect"[/b][/color] and "Enter") allows you to conveniently apply mathods with an effect for which you need to spend coins.
+ 
+    If you pressed the "Multiсhoice" button, then it goes into an active state, if you pressed it again, then it goes into a passive state. If the button is active, then by clicking on the inscriptions with z_in, d_in, ill or dead and on the inscriptions with their values for a given region, you can add this region to the list of regions where you want to apply this method. [color=00ffff][b]Blue[/color][/b] circle will light up at the bottom right of the hex of this region, indicating that you have selected this region.
+    
+    When you press the enter button, you are prompted to select a method to use from the list of methods available to you, such as "for the region". Also, by double-clicking (instead of a single one, when "Multiple selection" is not active), you can select only this hex to apply the method you need.
+
+    The fourth button [b][color=e69719]"Additional"[/b][/color] opens a menu of settings, additional options, etc. This menu will be discussed in the next section of the game guide. 

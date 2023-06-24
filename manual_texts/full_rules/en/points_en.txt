@@ -1,0 +1,41 @@
+[color=e02d33][b]Penalty points[/color][/b]
+    You get them according to the following rules:
+
+* +1 for each region in which 5% of the population (as a percentage of the region's population at the time of the turn) is ill. It is recalculated at the beginning of each turn.
+
+* +1 for every 20% (as a percentage of the region's population at the start of the game) of the ill population in each region. It is recalculated at the beginning of each turn.
+
+* +1 for each region in which 0.5% of the population (as a percentage of the region's population at the start of the game) has died. It is recalculated at the beginning of each turn.
+
+* +1 for every 2% (also as a percentage of the region's population at the start of the game) deceased in each region. It is recalculated at the beginning of each turn.
+
++ written [color=8000dd][b]purple[/color][/b] the number of penalty points that this region has brought you by the number of ill or dead, can be seen in the upper right corner of the corresponding state circle.
+
+* there are so-called [color=e69719][b]non-combustible[/b][/color] penalty points. They are not lost at the end of the turn:
+  
+  - some methods (such as Money laundering, Sale of state company, Increasing of taxes) add such non-combustible points. See method cards.
+  
+  - some methods (for example, Masks&Gloves) can, while in the activated state, increase the number of penalty points by some amount.
+
+  - if the number of assets is negative at the end of the turn, then 1 non-combustible penalty point is awarded (this can be in rare cases if the country's income is also negative, for example, due to a long retirement)
+
+[color=e02d33][b]Penalty limit[/b][/color]
+
+    You lose when you get a certain number of penalty points. This number is written after the "/" symbol opposite the "penalty points" column of the left game panel.
+    This number depends on the country you are playing for, the game mode and the infection that caused the epidemic. This number equals "country penalty factor" * disease penalty multiplier * game mode penalty multiplier.
+        
+    The "Propaganda" method in the activated state increases the penalty limit, i.e. the number of penalty points resulting in a loss.
+
+[color=1ea814][b]Victory points[/color][/b]
+
+* each turn you get 1 victory point.
+
+* if you have neither a medicine nor a vaccine open, then:
+    You lose all victory points you scored in this way if there are at least 100 sick people in any region.
+
+* if a medicine or vaccine has been opened:
+    You lose all victory points you gained in this way if in some region 0.01% of the population (as a percentage of the population at the time of this turn: part of them died) is ill and this number of patients is more than 50 (there are very sparsely populated regions where sick tourists can get and create such a number of patients).
+
+* some methods add victory points that you do not lose in the cases described above (such victory points, by analogy with penalties, are also called non-combustible). For example, you receive 1 non-combustible victory point for using "Transferts".
+     
+    You win if you score 5 victory points. Keep in mind that you can theoretically win without even inventing a vaccine or medicine, but it is very difficult (and hardly possible) to do so.

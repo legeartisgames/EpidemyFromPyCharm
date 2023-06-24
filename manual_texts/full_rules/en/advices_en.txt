@@ -1,0 +1,25 @@
+[b][color=e69719]Tips on the game[/b][/color]
+
+- "for the region" methods, which give a one-move or one-time effect, are very tedious (and expensive!) to apply each time. Try to use them only to correct the course of the epidemic. Such methods are very useful in order to weaken one of the hotbeds of the epidemic.
+
+- methods with activation, most likely, have some drawbacks (most often, a decrease in income). But the positive effect of these methods is also great. Most of these methods are so-called "government measures".
+
+- [color=e69719]extinguish the epidemic at the very beginning[/color]. Do not be afraid to get money for this through the "Money emission" or "Sale of state company." The "Isolate!" method is extremely strong at the beginning of the game.
+
+- remember about [color=e69719]seasonality of epidemics[/color]. When the epidemic is in decline, invest and get new methods.
+
+- [color=e69719]long-term consequences[/color] are very important in the "Epidemic". For example, production investments already pay off in 10 moves, and then they begin to bring a net profit. The sale of state-owned company, on the contrary, makes it possible to do something about the epidemic right now, but because of this, a lack of money may begin in a few months.
+
+- use the methods [color=e69719]"Money Laundering" and "Transferts"[/color] in order to increase your winnings in the game (the received reserves / stars go straight to you, and not at the end of the party). This will certainly not be difficult to do when medicine or vaccine is aready researched.
+
+- [color=e69719]do not be afraid of penalty points[/color]: they are extremely dangerous only if there are a lot of them. You can collect a lot of them at the beginning of the game by methods (increasing of taxes, money emission, etc.), but still win and even faster: if there is money, there will be mastered methods. The main thing is to find a balance.
+
+- [color=e69719]try different countries, diseases and modes[/color]: epidemics are different, each may require its own control algorithm. Countries, by the way, have slightly different method parameters. We hope that in this way we managed to convey the characteristic features of states.
+
+- [color=e69719]modes have different reward ratios[/color], i.e. some modes bring more or less rewards than normal. "Rich" award-winning modes will speed up your progress through the achievement bar.
+
+- [color=e69719]build charts[/color] for regions or the country as a whole. They are beautiful! You can take screenshots and send them to your friends. Let them see that you know how to overcome the epidemic. For the screenshot, the simultaneous pressing of the "recent applications" and "sound decrease" buttons should work, but this is not accurate.
+
+- Most important: "Epidemic" is a mobile game, not a board game. You [color=e69719]cannot break the game rules[/color], so play as you want.
+
+[b][color=e69719]Recommendation for beginners[/color][/b]: play the first games in the "Penalty limit x5" mode with the Universal country against Covid-19. With this arrangement, you shouldn't lose. Get used to the application, press whatever buttons you like. 

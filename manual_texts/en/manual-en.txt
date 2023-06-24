@@ -1,0 +1,91 @@
+﻿[b][color=ff0000]Instructions for using the game "Epidemic: Inception".[/color]
+[color=e69719] What the game is about.[/b][/color]
+In this game you have to eliminate an epidemic of an infection similar in its properties to Covid-19.
+
+You are the head of one of 11 countries. The discovery of either a medicine or a vaccine will lead you to victory in the game. For this you will have to collect a lot of money. Turn after turn, the country will bring you a certain income. But do not forget about the epidemic - it makes itself felt; you have no chance of winning the game if you don't accept
+certain measures. Which ones are up to you. It can be strict quarantine, a ban on air travel, isolation of everyone
+individual patient, mass tests and much more. Just remember that the ultimate goal - to score [color=1ea814][b] 5 victory points [/color][/b] - is achievable only after the creation and introduction of a medicine or vaccine. And you do not have time to think;
+if you do not defeat the epidemic within a certain time, too many people will get sick and die
+and you will lose ([color=e02d33][b]25 penalty points [/color][/b] lead to the loss of the game).
+
+[b][color=e69719]What are the designations and what they are for.[/b][/color]
+In this game, some abbreviations are very often used. Among them are the following:
+
+- Coefficient [b][color = e69719]z[/b][/color] (divided into 2 components: [b][color=e69719]z_in[/b][/color] (for each region its own) and [b][color=e69719]z_out[/b][/color]).
+Moreover, z is always = z_in * z_out. This factor is responsible for the increase in the number of patients in this region-hex.
+Let's say you had X patients in this region (while this region does not interact in any way with other regions,
+those. transfer coefficient along its borders = 0, or this region does not border on any others).
+Then, on the next turn of patients, you will have X * z_in of this region * z_out (there will be a Gaussian deviation within 10%).
+
+- Coefficient [b][color=e69719]d[/b][/color] (divided into 2 components: [b][color=e69719]d_in[/b][/color] (for each region its own) and [b][color=e69719]d_out[/b][/color]). Moreover, d is always = d_in * d_out.
+This factor is responsible for the increase in the number of deaths in this region-hex. Let's say you had X patients in this region.
+Then on the next turn the number of the dead will increase by X * d_in of the given region * d_out.
+
+- [b][color=e69719]Ill[/b][/color] of a given region - the same as the number of patients currently in the region.
+- [b][color=e69719]Dead[/b][/color] of this region - the same as the number of dead in the region up to this point in time.
+
+-[b][color=e69719]Carryover Coefficient[/b][/color] - coefficient showing the effect of interaction between regions
+on the increase in the number of patients. Suppose we have 2 neighboring regions (A and B), the transfer coefficient between them = c,
+the number of patients in region A = X, in region A there are a people, and in region B - b. Then on the next turn the number of patients
+in region B due to interaction with region A will increase by c * X * ((2 * √ (a * b)) / (a ​​+ b)).
+So the lower the carryover ratio, the better.
+
+
+[b][color=e69719]How to play.[/color]
+The scheme of the playing field.[/b]
+Your main field of play (what you see most often on your screen) consists of a country map and a small panel
+with different buttons, parameters, etc. The map can be enlarged or reduced by sliding 2 fingers across the screen. Consider the panel design.
+[b][color=e69719] - Panel on the left. [/b][/color]
+Contains 4 buttons / groups of buttons: "End step", "Technology board", "Multiple choice", "Open settings".
+
+Pressing the first button ([b][color=e69719]"End move"[/b][/color]) simply ends the move. At the end of your turn, you receive the number of coins,
+corresponding to your income. The number of sick and dead also changes, and the coefficients z_in, d_in in each region
+take standard values ​​(for example, introducing strict quarantine only for this turn in the region reduces z_in by 5 times).
+
+The second button [b][color=e69719]"Technology board"[/b][/color] allows you to select a technology for research. This button looks like
+on "Multiple Choice", it is also active and passive, depending on whether the technology board is open or not.
+The technology board consists of 9 technologies and 3 investments. Technologies can be researched by clicking on the corresponding button,
+similarly, you can invest, only investments can be made as many times as you want.
+
+The third button (ie, the group of buttons [b][color=e69719] "Multiple selection" [/b][/color] and "Enter") allows you to conveniently apply technologies
+with the effect for which you need to spend coins. If you clicked the "Multiple selection" button, then it goes
+to the active state, if pressed again, then to the passive one. If the button is active, then you
+by clicking on the labels with z_in, d_in, ill or dead and on the labels with their values ​​of the given region, you can add
+this region to the list of regions where you want to apply this technology. Bottom right hex for this region
+will light up [color=00ffff][b]blue[/color][/b] a circle indicating that you have selected this region. Pressing the enter button
+You are asked to select a technology to use from the list of technologies available to you. Also by double clicking (instead of
+single when Multiple choice is not active) You can only select this hex to apply the technology you need.
+
+The fourth button [b][color=e69719]"Open settings"[/b][/color] opens the settings menu.
+[b][color=e69719] Settings and statistics. [/b][/color]
+There you can turn the music on or off,
+adjust its volume, there is also information about your wealth status and reputation, which show your
+play skills and experience. If you want to replenish [b][color=e69719]assets[/b][/color] - the money that the country has in the game - you can do this by clicking on the button [b][color=e69719]"Increase money"[/b][/color].
+There you can transfer part of your gold and foreign exchange reserves into assets, or you can receive 10 coins as a reward for each video you watch (there is a special button for this).
+
+You can exit the settings menu either by pressing the corresponding button in the menu, or by pressing the "Back" button on your device once.
+
+[b][color=e69719] - Hex System. [/b][/color]
+Each hex contains the following parameters - population (indicated at the bottom of the hex), region number - hex (above),
+as well as four groups of objects. Each of them consists of 3 components - the first contains the name of one of
+4 parameters (z_in, ill, d_in or d_out). The second shows the value of this parameter.
+
+The first 2 components are regular lettering. The third component is a circle
+with changing color - shows the state of the given parameter, i.e. how dangerous, for example,
+number of patients for your country. The circle can be from green to red, also if the situation is completely terrible,
+then a purple dot appears in the center of that circle, which grows with the worsening of the situation in the country.
+If a [color=8000dd][b]purple[/color][/b] point appears on the circles corresponding to the number of sick or deceased, it means that
+You have been awarded an additional penalty point for this parameter in this hex.
+
+[b][color=e69719]Progress in the game [/b][/color].
+“Epidemic: Inception” will change with you after the games played - you accumulate reputation stars and gold and foreign exchange reserves that you need:
+- to increase the status of welfare or status of reputation (for now, these statuses just let you know that you have advanced)
+
+- to discover new countries. Some countries (Australia, India, China and Japan) are available for the game only if you have a sufficient number of reputation stars or gold and foreign exchange reserves.
+Please note that if you convert gold and foreign exchange reserves into assets (in one of the parties), then you will not be able to return them back. You can also lose the previously achieved status or lose (until you get more stars or reserves) of the opportunity to play for one of the countries.
+
+It is very convenient to track your progress using the option [b][color=e69719] "Achievements panel" [/b][/color]. It shows your level (by stars or reserves) and levels that will open a new country or new status.
+
+
+
+

@@ -1,0 +1,18 @@
+[b][color=ff0000] Short game help.[/color][/b]
+
+[b][color=e69719] z_out [/color][/b] - the overall incidence rate in the country (see its effect further)
+[b][color=e69719] d_out [/color][/b] - the overall mortality rate for the country (see its influence below)
+
+[b][color=e69719] z_in [/color][/b] - the morbidity rate in this region: z_in * z_out * the number of patients shows the increase in the number of patients per turn in the hex (the transfer coefficient also has a positive effect on this))
+[b][color=e69719] d_in [/color][/b] - mortality rate in this region (d_in * d_out * number of patients = number of deaths per turn in a hex)
+[b][color=e69719] Ill [/color][/b] - the number of patients in this region-hex
+[b][color=e69719] Dead [/color][/b] - number of deaths in this region-hex
+
+[b][color=e69719] Income [/color][/b] - after each move, the number of coins in the assets of your country increases by the value of income.
+[b][color=e69719] coins (Coins) [/color][/b] - the size of the country's assets, ie the amount of funds in your country.
+
+[b][color=e69719] Carryover (carryover coefficient)[/color][/b] - a value, at a high value of which the number of patients additionally increases in neighboring regions.
+
+[color=1ea814][b] Victory points [/color][/b] - if you get 5 victory points, you will win.
+[color=e02d33][b] Penalty points [/color][/b] - if you get 25 penalty points, you will lose.
+

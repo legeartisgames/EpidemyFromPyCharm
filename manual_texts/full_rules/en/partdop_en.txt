@@ -1,0 +1,14 @@
+[b][color=e69719]Section "Additional" (Settings, statistics, etc.).[/b][/color]
+In the game splash screen, open by clicking on the "My statistics" button, during the game - by clicking on the "Additional" button on the left game panel.
+ 
+    In the "Additional" section, you can turn the music on or off, adjust its volume, there is also information about your wealth status and reputation, which show your playing skills and experience.
+    
+    If you went to the "Additional" section during the game, then in it you can also see the parameters of this game: country, game mode and infection, as well as the number of reputation stars that you will receive if you win this game.
+
+    You can choose whether to show during the game [b][color=e69719]real country sizes[/b][/color] or not. The actual size will allow you to distinguish a small country from a large one, even if those countries have the same number of regions.
+
+    If you have lost the very country with regions on the playing field (for example, you flicked the map somewhere far away with your fingers), then you can click on the button [b][color=e69719]"Center country map"[/b][/color], which will nicely position the country map with the correct magnification right in the center.
+
+    If you want to replenish [b][color=e69719]assets[/b][/color] - the money that the country has in the game, then you can do this by clicking on the button [b][color=e69719]"Get money"[/b][/color]. There you can transfer part of your gold reserves into assets or receive 10 coins as a reward for each ad video you watch (there is a special button for this).
+
+    You can exit tht "Additional" section either by pressing the corresponding button in the menu, or by pressing once the "Back" button on your device. 

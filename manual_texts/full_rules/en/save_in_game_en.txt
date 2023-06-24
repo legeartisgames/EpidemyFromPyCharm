@@ -1,0 +1,30 @@
+[b][color=e69719]- About the size of the application[/b][/color]:
+
+* the size of the downloaded application is about 40 MB
+
+* the application takes up about 150 MB of device memory. This is due to the fact that "Epidemy" is written in Python with the kivy and matplotlib libraries, and Python is not native to Android. In this regard, you have to store the entire programming language in the application.
+
+* really real user data "Epidemy" stores no more than a couple of MB. Everything else is software + graphics + music.
+
+Note: especially advanced users may notice that Epidemy has about 80 MB of user data. The fact is that this directory also includes the "unpacked" application file, with all python modules, codes, etc. All kivy applications have this strange property.
+
+[b][color=e69719]- About saving data in the "Epidemy"[/b][/color]:
+
+* "Epidemy: The Outbreak", of course, saves user statistics, including when updating the application.
+
+* "Epidemiy: The Outbreak" saves your preferences: music volume, music state (on / off), the situation with the real size of the country (write them on the map or not).
+
+* You can save the game to play it later. In this case, you will not be able to finish playing the saved game if you update the application (the situation is very rare). To definitely avoid any problems, we advise you to play to the end right away.
+
+
+[b][color=e69719]- About the use of the Internet in the "Epidemy"[/b][/color]:
+
+* "Epidemy: The Outbreak" works perfectly in offline mode.
+
+* "Epidemy: The Outbreak" uses the "Internet access" permission to:
+
+    - display ads (including rewarded videos)
+    - check the Internet connection (for the correct operation of advertising)
+    - open links related to "Epidemy" (its site, pages in social networks). 
+
+[b][color=e69719]Privacy Policy[/color][/b] (new!) can be found [u][ref=https://legeartisgames.github.io/studio/privacy_policy.html]here[/ref][/u].

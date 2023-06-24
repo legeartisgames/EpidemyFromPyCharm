@@ -1,0 +1,17 @@
+We ([b][color=e69719]Legeartis Games[/b][/color]) are a team of Russian mobile game developers.
+"Epidemy: The Outbreak" has been developed by us since August 2020. It is written in Python3 using the Kivy library. We also use MatplotLib for making charts.
+
+"Epidemy: The Outbreak" is a simulation game that aims to explain how the epidemic spreads. Using our proposed model (albeit imperfect), it is possible to analyze, among other things, the Covid-19 pandemic.
+
+We have not yet managed to achieve complete realism, but the game already allows you to understand how important it is not to be late in making a decision during an epidemic. You are often faced with the choice of what to do: prevent the economy from collapsing or try to stop the spread of the epidemic; invest in research to learn how to treat people from infection in the future, or in hospitals to save those already sick.
+
+[b][color=e69719]Links to our sites:[/b][/color]
+
+[ref=https://vk.com/epidemy_inception]- VK community: [u]https://vk.com/epidemy_inception[/ref][/u].
+
+[ref=https://www.facebook.com/epidemy_outbreak]- Facebook community: [u]https://www.facebook.com/epidemy_outbreak[/ref][/u].
+
+You can write to us there. We will be glad to receive your suggestions about the game.
+
+[i][color=cf7f17]Alex Kravatsky[/i][/color], author and developer of "Epidemy"
+[i][color=cf7f17]Yury Kravatsky[/i][/color], publisher of "Epidemy"

@@ -1,0 +1,20 @@
+[color=09e0d6][b]Common mode[/b][/color] - no changes.
+
+[color=09e03b][b]Mode 40 seconds per turn[/b][/color] (awards x1.25) - you are unlikely to notice something. Perhaps sometimes there will be a little lack of time for a move. Most likely, you will not have time to use the guide.
+
+[color=9420ab][b]Mode 25 seconds per turn[/b][/color] (awards x2) - you have to think very quickly in order to have time to do everything in the country. Of course, in this mode, you need to either analyze the methods panel very quickly, or know it well.
+
+[color=ab205c][b]Mode 15 seconds per turn[/b][/color] (awards x3) - the main thing is not to panic with it. It seems to us that playing with this mode, you can win only if you know "Epidemic" very well.
+
+[color=e03b0d][b]Penalty limit х5[/b][/color] (rewards х0.2) - a mode that allows you to develop a winning strategy without being distracted by penalty points (because of which you lose). You will hardly get any rewards in this mode, but you can test whatever you want. This is a great mode for beginners who have never won by the standard rules.
+
+[color=32a852][b]Methods from scratch[/b][/color] (x2.5 awards) - the mode, perhaps, is the closest to reality. You start the game with only 3 methods in the methods panel: Lawmaking, Vaccine, and Cheap Medicine. The rest will have to be obtained through lawmaking. This mode will force you to use exactly the methods that were proposed by the government. Thus, this mode is most "conducive" to the search for new strategies.
+
+[color=7ef542][b]Contented capital[/b][/color] (x1.5 awards) - everything is like in real life. If the capital is happy with everything, there are no uprisings. If in the capital something is wrong, the power flies. How it looks in the game: if at least 3 penalty points are received because of the capital, then you lose. 
+
+    How does [b][color=e69719]"Mode x seconds per turn"[/color][/b] work: x seconds after the start of the turn, turn automatically ends. You can complete the turn earlier, but no one will return the time saved in this way.
+The running time is graphically reflected by the date in the section of the left game panel. After the first two weeks of the month, the date will turn yellow, after 3.5 weeks - red. At the beginning and middle of the month-turn there will be a vibration of the phone.
+
+    Please note that [b][color=e69719]the time per turn cannot be stopped![/color][/b] Even if you want to read something in the guide, change something in the settings or build a chart. Actually, this is vital: useful statistics are always late, and the ruler needs time to carefully consider the laws.
+
+    The awards written in brackets (for example, "x2 awards") mean the number of reputation stars or gold reserves that you receive at the end of the game. The x2 value ([b][color=e69719]reward multiplier[/color][/b] x2) shows that you will receive 2 times more of those rewards.

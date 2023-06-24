@@ -1,0 +1,39 @@
+﻿In "Epidemy" you are invited to manage one of 12 real countries: Argentina, Australia, Brazil, Canada, China, Germany, India, Mexico, Russia, Turkey, Japan. You can also train in one fictional country — Universal.
+
+    The current section contains information on these countries directly related to the "Epidemy". We recommend you to read this section before choosing the country for which you are going to play.
+
+    In the country selection menu, you can click on the name of the country you are interested in, and you will see the [b][color=e69719]country difficulty level[/b][/color] (on a ten-point scale) - the level shows the difficulty of the game for the selected country. The number of reputation stars (and, therefore, gold reserves) that you will receive for winning for a given country is positively related to the level of difficulty.
+
+[b][color=9eeb34]Argentina[/b][/color] - a country with a not very strong economy, but with good natural conditions. Narrow territory will allow, through strict quarantines in the regions, to "divide" the country in two. 
+
+[b][color=069719]Australia[/b][/color] is a good country for a person just starting to get acquainted with the "Epidemy". Consists of 12 hexes (they are not very difficult to manage), while the growth rate of the number of cases in this country is not the highest.
+
+[b][color=c66709]Brazil[/b][/color] is a country with a normal income, but with not very good parameters of the spread of the epidemic (especially in coastal regions). The country is well suited for a person who is already familiar with the game.
+
+[b][color=7677ff]Canada[/b][/color] - a comfortable country for exploring the game. It has one of the lowest infection rates and at the same time a sufficiently large territory that allows you to learn how to play for a large country (for example, Canada can be used as a "study" in front of Russia).
+
+[b][color=f63069]China[/b][/color] is a country that is well suited to the future connoisseur of the game: very large income, spacious territory, high (but at the same time allowing to win) infection rate - you will find all this in China.
+
+[b][color=ad6e2f]Germany[/b][/color] is a very pleasant country to play for. The German bureaucratic machine ensures the smooth functioning of the state, so Germany is relatively easy to manage (it consists of only 7 hexes in the game). Unique trait of Germany is «Respirators» method, which replaces «Masks and Gloves».
+
+[b][color=86b759]India[/b][/color] is a country with quite a large income, but very poor incidence rates. We advise you to play for India only if you have already won almost all other countries. India, in our opinion, is the most "difficult" country in the game.
+
+[b][color=2637ff]Japan[/b][/color] is another country of the East. Japan is not very wide, but at the same time it is extended. The narrowness of the country weakens the effect of the spread of the disease. Japan has one of the highest incomes in the game, so it is quite easy to win for Japan, but it does not have the most favorable infection spread rates.
+
+[b][color=66ef79]Mexico[/b][/color] is not the most comfortable country for the game. The high rate of growth in the number of patients and low income will allow you to demonstrate your ability to win even in cramped conditions, while a small territory in terms of the number of hexes leaves the possibility of victory. You can also "train" for India by playing as Mexico.
+
+[b][color=e60719]Russia[/b][/color] - the largest country in this game. 21 hexes are very difficult to manage, but good income and low population density in some regions (and, therefore, not so terrible parameters of the spread of the epidemic) will lead to victory for this country too.
+
+[b][color=e1eb34]Turkey[/b][/color] - a country of the beginner-medium level. It consists of only 10 hexes, and since it is located in a subtropical climate, it has not very strict parameters for the spread of infection. It can be used as a country to find new winning strategies.
+
+[b][color=a6c329]Universal[/b][/color] - the only fictional country in our game. It is the best way to get acquainted with the game, because Universal has a very simple symmetrical territory that is easy to manage.
+
+[b][color=f69739]USA[/b][/color] is one of the richest countries (in our game). The flip side of the coin is that the US has a lower penalty point limit, i.e. the epidemic will have to be kept under control. An exotic territory with a semi-enclave will diversify your game.
+
+    Please note that not all countries will be available from the very beginning - some of them will open only when you collect a certain number of reputation stars or gold and foreign exchange reserves. You can open the [b][color=e69719]achievement bar[/b][/color], which clearly shows your current achievements - the number of stars and reserves, as well as what you are striving for - the number of reputation stars or gold reserves, which you must have so that you can get the desired country.
+
+    z_country_factors (which were discussed in the section "Parameters in the game"):
+[0.7, 0.5, 0.6, 1.2, 0.9, 1, 0.65, 1.05, 0.6, 1.3, 0.7, 0, 1.1] (alphabetical order of countries).
+
+    Country penalty factors (they were discussed in the section "Penalty and Victory Points"):
+[35, 25, 35, 20, 28, 23, 50, 28, 30, 40, 28, 25, 23] (again in alphabetical order). 

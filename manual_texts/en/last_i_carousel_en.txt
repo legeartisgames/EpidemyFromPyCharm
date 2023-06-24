@@ -1,0 +1,11 @@
+This is the end of the training.
+Press "back" on the device to exit it. If you have just opened "Epidemy", 
+you will find yourself in the game splash screen.
+
+To start playing, click on the "Start gaming!", select infection, country and game mode.
+
+Our tip: if you are playing for the first time, choose
+[color=e69719][b]Monkey pox, Universal country[/b][/color] and mode [color=e69719][b]"Penalty limit х5"[/b][/color].
+This will make your first game easier.
+
+Thank you for your attention!

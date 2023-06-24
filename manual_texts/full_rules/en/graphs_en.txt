@@ -1,0 +1,26 @@
+[b][color=e69719]Charts[/b][/color]
+
+    Now you have the opportunity to view graphs showing the epidemic situation in each region. There are currently 9 types of charts available:
+
+- the number of patients
+- the number of deaths
+- the number of people who recovered
+- z_in * z_out versus time
+- percentage of the immune people
+- the number of cases per day
+- the number of deaths per day
+- the number of people who recovered per day
+- the number of penalty points
+
+    To use the charting option:
+- for graphs of ill, dead or z_in*z_out long press on the icon of the corresponding section in the hex.
+
+- for charts of all types (except for penaly points), select region and there click on the "Region data" button. Then you will see a chart selection menu.
+
+    You can also watch [b][color=e69719]graphics[/b][/color] 8 of the above parameters (except for z_in * z_out) [b][color=e69719]for the whole country[/b][/color] generally:
+- for the number of cases per day: click on the z_out value from the left panel
+- for the number of deaths per day: click on the d_out value from the left panel
+- for the number of penalty points: click on penalty points value from the left panel
+- for all parameters: mark at least 2 regions in the "Multiple selection", click on the "Country data" button, select the value you are interested in.
+
+    To close the chart, you can either double-click on the chart, or, as usual, press the "Back" button on your device.

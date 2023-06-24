@@ -1,0 +1,42 @@
+"Epidemy" often use the following abbreviations corresponding to the game parameters:
+
+- [b][color=e69719]Coefficient z[/b][/color] is divided into 2 components: [b][color=e69719]z_in[/b][/color] (for each region its own) and [b][color=e69719]z_out[/b][/color].
+Moreover, z is always = z_in * z_out. z is responsible for the increase in the number of patients in this region-hex.
+    
+    Let's say you had X patients in this region, while this region does not interact in any way with other regions, i.e. transfer coefficient along its borders = 0, or this region does not border on any others.
+Then on the next turn you will have X * z_in of the given region * z_out ill people (there will be a sly deviation from this value by about 10% and the number can change by about 20 in both directions).
+
+    z_in of a region depends on the geography of the region (population density, latitude, state, etc.), on the methods applied to this region (for example, mass tests) and on the proportion of people immune to infection. Thus, if everyone in the region has already been ill, then the infection will not spread in it.
+
+- [b][color=e69719]Coefficient d[/b][/color] is divided into 2 components: [b][color=e69719]d_in[/b][/color] (for each region its own) and [b][color=e69719]d_out[/b][/color]. Moreover, d in this region is always = d_in * d_out.
+
+d is responsible for the increase in the number of deaths. If this turn in this region there were X sick, then on the next turn the number of deaths in that region will increase by X * d_in * d_out.
+
+- [b][color=e69719]Ill[/b][/color] of a given region - the same as the number of ill people in the region.
+- [b][color=e69719]Dead [/b][/color] of this region - the same as the number of deaths (due to the epidemic) in the region.
+
+- [b][color=e69719]Transfer coefficient[/b][/color] (aka[b][color=e69719]Transfer[/b][/color]) - coefficient showing the effect of interaction between regions among themselves to an increase in the number of patients.
+    
+    Suppose we have 2 neighboring regions (A and B), the transfer coefficient between them = c, the number of patients in region A = X, in region A there are a people, and in region B - b. Then, on the next turn, the number of patients in region B will increase due to interaction with region A.
+to c * X * z_in region B * 2 * √(a * b) / (a + b). The lower transfer coefficient is, the better.
+
+- [color=e69719][b]Immunity[/b][/color] (new!): the same as human immunity to disease.
+    
+    * Can be [color=e69719]congenital[/color] (but usually there are very few such people) or [color=e69719]acquired[/color]: a person becomes immune to the disease after recovery. A recovered person retains this immunity only for some time, see [color=e69719] the terms of preservation of immunity by those who have recovered[/color] in "Diseases info".
+    
+    * The vaccinated person gains lifelong immunity to infection.
+    
+    * The higher the percentage of the immune population in the region, the lower the z_in is (it is automatically recalculated when people get vaccinated/recovered).
+    
+    * The percentage of the immune population can be monitored using the corresponding graph.
+
+[color=e69719][b]Calculation of z_out and d_out[/b][/color]
+* z_out = modifiers_z_out (result of applying methods) * z_of_diseases * (1 + (z_seasonal_deviation - 1) * z_country_factor). As a rule, in southern countries z_country_factor is less than 1, i.e. z_out does not change that much throughout the year. In the north, on the contrary, the fluctuations are stronger. See z_country_factors in the Country info.
+
+The z_seasonal_deviations for the countries [color=e69719][b]in the northern hemisphere[/b][/color] are the z_seasonal_deviations of the infection.
+
+The z_seasonal_deviations for the [color=e69719][b]southern hemisphere[/b][/color] countries are the result of a 6-month shift in z_seasonal_deviations of the infection.
+
+See Disease info for z_seasonal_deviations values of a particular infection by month.
+
+* d_out = d of infection.

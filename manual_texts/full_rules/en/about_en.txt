@@ -1,0 +1,15 @@
+[b][color=e69719]What the game is about.[/b][/color][/b]
+
+    In this game you are the head of one of 13 countries. You have to eliminate the epidemic of one of the infections that caused pandemics in the real world.
+    
+    Most likely, the discovery of either a medicine or a vaccine will lead you to victory. To do this, you will have to collect a lot of money. Turn by turn (i.e., month by month), the country will bring you a certain amount of money, you will use it to develop a medicine or vaccine and to fight the epidemic.
+
+    How to deal with the epidemic is up to you. This can be a strict quarantine, a airflight cancellation, isolation of each individual patient, transfer of schoolchildren to a distance, and much more. Just remember that the ultimate goal - to score [color=1ea814][b]5 victory points[/color][/b] - is achievable only after the creation and introduction of a medicine or vaccine (except in rare cases).
+    
+    You don't have time to think; if you do not defeat the epidemic in a certain time, then too many people in the country will get sick and die and you will lose - [color=e02d33][b]about 30 penalty points[/color][/b] (depending on country, disease and your actions) lead to defeat in the game.
+
+[b][color=e69719]Useful text.[/color][/b]
+
+    We advise you to familiarize yourself with this game guide. There you will find detailed information on useful gaming options, for example, about the second option for displaying the methods panel or about how to build a graph for the whole country according to the parameter you are interested in.
+    
+    At first, while you are probably not yet familiar with the "Epidemy", we recommend not to neglect the "Brief game help". [b][color=e69719]Brief game help[/b][/color] contains a mini-reference that explains the most important in-game conventions. "Brief game help" is one of the sections in the game guide that you are currently reading (see contents).

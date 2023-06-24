@@ -1,0 +1,50 @@
+[b][color=e69719]How to play[/b][/color]
+
+Your goal is to stop the epidemic in the country. The best way to do this is to research a medicine or vaccine. To do this, you will have to get the methods of fighting the epidemic (from the methods panel), and then use them.
+
+The game is split into turns, i.e. months. When you end a turn (we can say that the end of a turn is a "phase of the passage of time" in the game), the number of ill and dead people changes, the country receives income, and the one-turn effects of methods ("only for this turn ...") stop working.
+
+[b][color=e69719]Hex-regions[/b][/color]: the country in the game consists of numbered regions. They are indicated by hexes. In each hex, 4 colored circles are drawn on the right - they indicate the state of the 4 infectious parameters of the region (see their value in the center of the hex in the white boxes).
+
+[b][color=e69719]Actions with the country map[/b][/color]: the size and position of the map change with finger movements (as always on the phone).
+
+[b][color=e69719]Typical structure of the methods card[/b][/color] (from top to bottom): name, cost of the method, description of the game effect from getting the method, button for getting the method.
+
+[b][color=e69719]Types of methods[/b][/color]:
+
+    - ordinary (gotten - got something)
+
+    - investments (you can "get it" as many times as you like, from each investment a constant effect)
+
+    - with activation (there is an effect if the method is gotten and activated. Then there will be a "Deactivate method" button the left of the method card).
+
+    - for the region (you get it, then spend some money on the region and get the effect on this region. "if you spend x coins on the region ...").
+
+[b][color=e69719]How to apply the method to the region/regions[/b][/color]:
+
+- in the corresponding method card, select the number of the desired region through "+" and "-" and click "Make!"
+
+- or double-click the hex you need and select the method you need in the drop-down menu (if you go to "Region data", then the graph will be offered there).
+
+- or use "Multiselect" option:
+    * have this button turn on
+    * click on the hexes (the blue circle at the bottom right of the hex indicates that the region is selected)
+    * press "Enter", and then select in the drop-down menu what you need (you can also select the plotting there).
+
+[b][color=e69719]Designations[/b][/color]:
+
+[b][color=e69719]z_out[/color][/b] - the overall incidence rate in the country (see its influence below)
+[b][color=e69719]d_out[/color][/b] - the overall mortality rate for the country (see its influence below)
+
+[b][color=e69719]z_in[/color][/b] - the incidence rate in the region: the number of patients on the next turn in the region = z_in * z_out * the number of patients on the current turn (the transfer coefficient also has a positive effect on this)
+[b][color=e69719]d_in[/color][/b] - mortality rate in the region (d_in * d_out * number of patients = number of deaths per turn in a hex)
+[b][color=e69719]Ill [/color][/b] - the number of patients in this region-hex
+[b][color=e69719]Dead[/color][/b] - number of deaths in this region-hex
+
+[b][color=e69719]Income[/color][/b] - after each turn, the number of coins in the assets of your country increases by the value of income.
+[b][color=e69719]coins (Coins)[/color][/b] - the size of the country's assets, i.e. the amount of funds in your country.
+
+[b][color=e69719]Transfer coefficient[/color][/b] (aka [b][color=e69719]Transfer[/b][/color]) - the value at a high value of which the number of patients in the region increases greatly in the neighboring regions.
+
+[color=1ea814][b]Victory points[/color][/b] - if you get 5 victory points, you will win.
+[color=e02d33][b]Penalty points[/color][/b] - if you get 25 penalty points (or some other number - see the second number in the "Penalty points" section of the panel on the left), then you will lose.

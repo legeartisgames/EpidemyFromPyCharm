@@ -1,0 +1,14 @@
+We advise you to go through [color=e69719][b]mini-tutorial on the game.[/b][/color]
+It is represented by 9 visual slides (this is the first one).
+
+You can navigate between slides by flipping through them (as usual).
+Double clicking on the screen also works (clicking on the left means
+transition to previous slide, on the right means transition to next slide).
+
+To exit the mini-tutorial, press the [color=e69719][b]"back"[/b][/color] button.
+
+This mini-tutorial can always be opened in the section [color=e69719][b]"Game guide".[/b][/color]
+There is also [color=e69719][b]Brief game help[/color][/b] - it will be useful to you during the first games.
+
+We also recommend reading the full rules, but it's better to do this already
+after a couple of games played, when you would learn the basics.

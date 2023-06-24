@@ -1,0 +1,41 @@
+[color=05af36][b]Covid-19[/b][/color] (pandemic 2020 - present) is certainly the most sensational disease in recent years. In our game, it has parameters: z = 2.5, d = 0.03. 
+
+[color=e65a30][b]Monkey pox[/b][/color] (new!) takes interesting place today. Some people prognosticate the pandemic of it. In "Epidemy" (as in real life) monkey pox has quite meek parameters: z = 1.8, d = 0.1. If you are a beginner, then monkey pox will suit you best for parties.
+
+[color=cb903a][b]Swine Influenza[/b][/color] (pandemic 2009-2010) — contagious, but almost non-lethal disease: z = 3.2, d = 0.002 + 2 times higher than other diseases transfer coefficient. Seasonal deviations in z are very large: in summer the epidemic is almost invisible, in winter the situation is terrible (in fact, the main thing with the flu is to survive the winter). We recommend choosing the flu if you want to learn how to cope with the very rapid increase in the number of cases. The country is short of money at the start of the game due to the recent economic crisis of 2008.
+
+[color=4030cf][b]Bubonic Plague[/b][/color] (consider that its new strain) — the disease is almost always fatal: z = 2.3, d = 0.9. Since the causative agent of the plague is of bacterial origin, it is easier (and therefore cheaper) for it to make a medicine or vaccine. Be that as it may, the plague must be defeated as quickly as possible, because in the modern world people live very closely together, and the plague will spread quickly. It seems to us that it is worth trying to defeat the plague only if you have already won more than once for Covid-19.
+
+[color=bf2119][b]Smallpox[/b][/color] (without a ready-made vaccine) — the disease is very contagious and at the same time completely fatal: z = 2.8, d = 0.3. The characteristic features of the disease are the lack of seasonality of the epidemic and a lower (compared to other infections) transfer coefficient.
+
+[color=cc10b3][b]Unknown infection[/b][/color] — a special game mode that is closest to reality. With it, you are trying to fight one of the 4 infections mentioned before. But you do not know what its parameters are equal to, so it becomes more difficult for you to make optimal decisions. 
+
+[color=e69719][b]Terms of preservation of immunity by those who have been ill[/b][/color]:
+
+covid-19: 6 months
+swine flu: 2 months
+bubonic plague: 10 years
+smallpox: for life
+monkey pox: for life
+
+[color=e69719][b]z_seasonal_deviations[/b][/color]:
+coronavirus: [1.45, 1.5, 1.3, 0.9, 0.6, 0.55, 0.5, 0.5, 0.9, 1.3, 1.35, 1.4]
+flu: [2.2, 2.4, 1.5, 1, 0.7, 0.5, 0.4, 0.4, 0.7, 1, 1.6, 2]
+plague: [0.6, 0.6, 0.9, 1.1, 1.2, 1.35, 1.45, 1.45, 1.2, 1, 0.9, 0.7]
+smallpox: everywhere 1.
+monkey pox: everywhere 1.
+
+Penalty infectious multipliers are:
+covid: 1, flu: 1, plague: 2.5, smallpox: 2, monkey pox: 0.7
+
+[color=e69719][b]Explanation of the "Vaccine" method[/b][/color]:
+
+- The vaccine gives the vaccinated people lifelong immunity to infection.
+
+- When vaccinating the region:
+
+    * if the doses are enough and people without immunity are more than 25% of the population of the region, then 25% of the population become vaccinated
+
+    * if there are enough doses and people without immunity are less than 25% of the population of the region, then everyone without immunity become vaccinated
+
+    * if the doses are not enough for everyone, then as many people become vaccinated as there are doses

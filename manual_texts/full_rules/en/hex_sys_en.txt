@@ -1,0 +1,24 @@
+[b][color=e69719]- Hex structure.[/b][/color]
+    Each region in a country is represented by a corresponding hex. Inside the hex you can see:
+ - population size (indicated at the bottom of the hex)
+ - region number (at the top of the hex)
+ - four groups - "lines" of objects. Each of them consists of 3 components:
+      * the first (leftmost) is the designation of one of the 4 parameters (z_in, ill, d_in or d_out).
+
+      * the second (middle) shows the value of this parameter.
+
+      * the third (far right) - a circle with a changing color - shows the state of this parameter, i.e. how dangerous, for example, the number of patients in a given region for your country. The circle can be green to red.
+
+    If a [color=8000dd][b]purple[/color][/b] dot appears on the circles corresponding to the number of sick or dead, this means that you have been charged an additional penalty point (or penalty points) for this parameter in this hex. The number of penalty points itself is written in the upper right corner of the component ruler next to the circle.
+
+    During the game, inside the hex one more hexagon can be drawn [color=af3039][b] with a reddish dotted line[/b][/color]. It means that the region with such a dotted line is isolated, i.e. it is not affected by transfer effects from adjacent region and is not affected by neighbors. Such non-influence allows to save the region from infection from the neighboring region.
+
+[b][color=e69719]- Gestures for charts and opening the regional menu.[/b][/color]
+
+* When you press for a long time on the name or value of one of the 4 groups of objects, a graph is automatically created, associated with the corresponding parameter for the given region.
+
+* If you double tap on the hex, then [color=e69719][b]regional menu[/b][/color] appears for the region in which the double tap was made. There you can:
+    - request the graph for the value you are interested in
+    - apply for a given region a method like "for a region" from among the methods you have open
+
+* The same regional menu drops out if you are in the "Multiple selection" mode and press "Enter" (in this mode, the corresponding button of the left game panel is lit). Then this menu drops out for those regions in which the little blue circle is glowing. If you have selected several regions, then you will be offered to apply the available methods to them or to create [b][color=e69719]graph[/b][/color] according to the parameter you need [b][color=e69719]for the whole country[/b][/color].
