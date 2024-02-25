@@ -73,8 +73,8 @@ class LockWidget(ButtonBehavior, GridLayout):
             text = ['нужно ещё '+str(math.ceil(avail_set[2]))+' stars', 'you need '+str(avail_set[2])+' stars'][common_var.lang]
         if avail_set[1] == 'coins':
             text = ['нужно ещё '+str(math.ceil(avail_set[2]))+' coins', 'you need '+str(avail_set[2])+' coins'][common_var.lang]
-        text = icon_func.letter_to_icons_increasing_size(size = sizes.Width_of_screen/53, coef = 1.6, string = text)    
-        self.lab = Label(text = text, font_size = sizes.Width_of_screen/53, markup = True)
+        text = icon_func.letter_to_icons_increasing_size(size = sizes.width_res/53, coef = 1.6, string = text)    
+        self.lab = Label(text = text, font_size = sizes.width_res/53, markup = True)
         self.add_widget(self.im)
         self.event = None
         self.markup = True
@@ -151,7 +151,7 @@ class UniToggleCheckbox(ToggleButtonBehavior, Image):
         
 class Universal_CheckBox(GridLayout): 
 
-    def __init__(self, item_list, type = None, text_size = sizes.Width_of_screen/53, fir_av = 0, availabilites = None, **kwargs): 
+    def __init__(self, item_list, type = None, text_size = sizes.width_res/53, fir_av = 0, availabilites = None, **kwargs): 
         super(Universal_CheckBox, self).__init__(**kwargs) 
         
         self.type = type
@@ -167,7 +167,7 @@ class Universal_CheckBox(GridLayout):
         
         self.fir_av = fir_av
 
-        self.spacing = (sizes.Width_of_screen/50, sizes.Height_of_screen/30)
+        self.spacing = (sizes.width_res/50, sizes.height_res/30)
         
         
         self.check_boxes = ['']*self.num_of_variants
@@ -177,17 +177,17 @@ class Universal_CheckBox(GridLayout):
                 
                 self.check_boxes[i] = UniToggleCheckbox(size_hint = [.6, None], item_list = self.item_list, 
                                                              color = [1, 1, 1,.7], number = i, parentt = self,
-                                                                  height = sizes.Height_of_screen/division_par)  
+                                                                  height = sizes.height_res/division_par)  
             else:
                 self.check_boxes[i] = LockWidget(size_hint = [.6, None],
-                                                 height = sizes.Height_of_screen/division_par,
+                                                 height = sizes.height_res/division_par,
                                                  avail_set = self.avails[i])
             
         if self.num_of_variants > 7:
             self.cols = 2
-            my_spacing = (sizes.Width_of_screen/50, sizes.Height_of_screen/20)
+            my_spacing = (sizes.width_res/50, sizes.height_res/20)
             if self.num_of_variants > 12:
-                my_spacing = (sizes.Width_of_screen/50, sizes.Height_of_screen/30)
+                my_spacing = (sizes.width_res/50, sizes.height_res/30)
             self.lay_left = GridLayout(cols = 2, spacing = my_spacing)
             self.lay_right = GridLayout(cols = 2, spacing = my_spacing)
             self.add_widget(self.lay_left)
@@ -200,8 +200,8 @@ class Universal_CheckBox(GridLayout):
                     self.lay_left.add_widget(Item_Label(item = self.item_list[i],
                                                         size_hint = [.4, None],
                                                         font_size = text_size, 
-                                                        height = sizes.Height_of_screen/division_par,
-                                                        valign = 'center', text_size = (None, sizes.Height_of_screen/division_par),
+                                                        height = sizes.height_res/division_par,
+                                                        valign = 'center', text_size = (None, sizes.height_res/division_par),
                                                         halign = 'left'))
                     self.lay_left.add_widget(self.check_boxes[i])
                 
@@ -210,8 +210,8 @@ class Universal_CheckBox(GridLayout):
                     self.lay_right.add_widget(Item_Label(item = self.item_list[i],
                                                         size_hint = [.4, None],
                                                         font_size = text_size, 
-                                                        height = sizes.Height_of_screen/division_par,
-                                                        valign = 'center', text_size = (None, sizes.Height_of_screen/division_par),
+                                                        height = sizes.height_res/division_par,
+                                                        valign = 'center', text_size = (None, sizes.height_res/division_par),
                                                         halign = 'left'))
                     self.lay_right.add_widget(self.check_boxes[i]) 
                 
@@ -222,8 +222,8 @@ class Universal_CheckBox(GridLayout):
                 self.add_widget(Item_Label(item = self.item_list[i],
                                            size_hint = [.4, None],
                                            font_size = text_size, 
-                                           height = sizes.Height_of_screen/division_par, 
-                                           valign = 'center', text_size = (None, sizes.Height_of_screen/division_par), 
+                                           height = sizes.height_res/division_par, 
+                                           valign = 'center', text_size = (None, sizes.height_res/division_par), 
                                            halign = 'left'))                
                 self.add_widget(self.check_boxes[i])
                 

@@ -1,6 +1,6 @@
 from kivy.core.audio import SoundLoader, Sound
 from kivy.uix.switch import Switch
-import common_data
+import common_data as cd
 sound = 0 
 
 from kivy.utils import platform
@@ -81,14 +81,14 @@ class My_switch(Switch):
         super(My_switch, self).__init__(**kwargs) 
         global music_switches
         music_switches.append(self)
-        self.active = common_data.my_stats.is_music_playing
+        self.active = cd.stats.is_music_playing
 
         self.bind(active = self.callback)
     
     
     def callback(self, value, instance):
         global music_switches
-        if common_data.my_stats.is_music_playing == True:
+        if cd.stats.is_music_playing == True:
             print("music turned off")
             if platform == "android":
                 sound.pause()
@@ -97,15 +97,15 @@ class My_switch(Switch):
             for i in music_switches:
                 i.active = False
             
-            common_data.my_stats.is_music_playing = False
+            cd.stats.is_music_playing = False
         else:
             print("music turned on")
             for i in music_switches:
                 i.active = True
             sound.play()
-            common_data.my_stats.is_music_playing = True
+            cd.stats.is_music_playing = True
         
-        common_data.my_stats.save_to_file()
+        cd.stats.save_to_file()
                 
                 
     
@@ -118,9 +118,9 @@ class My_switch(Switch):
         else:
             sound2 = SoundAndroidPlayer()
             sound2.load(filename='sounds/'+name+'.ogg', looping=loop)
-        if common_data.my_stats.is_music_playing == True:
+        if cd.stats.is_music_playing == True:
             sound2.play()
-            sound2.volume = common_data.my_stats.volume_of_music
+            sound2.volume = cd.stats.volume_of_music
             print("play", name)
             
         sound2.loop = loop

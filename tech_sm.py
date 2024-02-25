@@ -1,4 +1,4 @@
-import common_data
+import common_data as cd
 import sizes
 import uix_classes
 from uix_classes import Label_touch
@@ -24,7 +24,7 @@ class ViewerScreen(Screen):
     def __init__(self, typ = 'about', **kwargs):
         super(ViewerScreen, self).__init__(**kwargs)  
         self.sc = ScatterLayout(do_rotation = False, do_scale = False, do_translation = False,
-                                 scale = 0.9*sizes.Height_of_screen/common_data.my_game_frontend.wid[0].height
+                                 scale = 0.9*sizes.height_res/cd.frontend.wid[0].height
                                  )
                 
 class TechViewer(BoxLayout):
@@ -33,8 +33,8 @@ class TechViewer(BoxLayout):
         tech_viewer = self
         super(TechViewer, self).__init__(**kwargs)
         
-        self.spacing = 20*sizes.Width_of_screen/1000
-        self.padding = [20*sizes.Width_of_screen/1000, 0]
+        self.spacing = 20*sizes.width_res/1000
+        self.padding = [20*sizes.width_res/1000, 0]
         
         left_but = uix_classes.Image_touch(source='uix_images/green_left_arrow.png', size_hint_x = .11, on_press = on_left_press,
                                            color=(1, 1, 1, .85))
@@ -47,9 +47,9 @@ class TechViewer(BoxLayout):
                                             color=(1, 1, 1, .85))
         self.add_widget(right_but)
         
-        for i in common_data.common_var.tech_order:
-            if common_data.my_game_frontend.wid[i].is_avaliable == 'no in mode lack of methods' or \
-                (common_data.my_stats.are_shown_unlocked_methods == False and common_data.my_game.is_tech_avaliable[i]==False)\
+        for i in cd.common_var.tech_order:
+            if cd.frontend.wid[i].is_available == 'no in mode lack of methods' or \
+                (cd.stats.are_shown_unlocked_methods == False and cd.mg.techs_avail_bool[i]==False)\
                or i == 2 or i == 9:
                 continue
         
@@ -69,38 +69,38 @@ class TechViewer(BoxLayout):
             self.sm.next()
         self.sm.remove_widget(screen_being_removed)
         
-        common_data.my_game_frontend.wid[i].size_hint_x = 1
-        common_data.my_game_frontend.wid[i].width = 100
-        common_data.my_game_frontend.wid[i].pos_hint = {}
+        cd.frontend.wid[i].size_hint_x = 1
+        cd.frontend.wid[i].width = 100
+        cd.frontend.wid[i].pos_hint = {}
     
-        screen_being_removed.sc.remove_widget(common_data.my_game_frontend.wid[i])
+        screen_being_removed.sc.remove_widget(cd.frontend.wid[i])
         
         del screen_being_removed
     
     def add_element_to_screen(self, i):
         my_screen = self.sm.get_screen(str(i))
         
-        common_data.my_game_frontend.wid[i].size_hint_x = None
-        common_data.my_game_frontend.wid[i].width = common_data.my_game_frontend.wid[i].height*0.75
-        common_data.my_game_frontend.wid[i].pos_hint = {'center_x': 0.52/my_screen.sc.scale, 'center_y': 0.52/my_screen.sc.scale}
-        common_data.page2.remove_widget(common_data.my_game_frontend.wid[i])
-        my_screen.sc.add_widget(common_data.my_game_frontend.wid[i])
+        cd.frontend.wid[i].size_hint_x = None
+        cd.frontend.wid[i].width = cd.frontend.wid[i].height*0.75
+        cd.frontend.wid[i].pos_hint = {'center_x': 0.52/my_screen.sc.scale, 'center_y': 0.52/my_screen.sc.scale}
+        cd.page2.remove_widget(cd.frontend.wid[i])
+        my_screen.sc.add_widget(cd.frontend.wid[i])
                 
     def open_self(self, instance, ind_tech = 0):
         
         self.outer_folders = []
-        for i in common_data.page2_1.children:
+        for i in cd.page2_1.children:
             self.outer_folders.append(i)
         
-        common_data.page2_1.clear_widgets()
-        common_data.page2_1.add_widget(self)
+        cd.page2_1.clear_widgets()
+        cd.page2_1.add_widget(self)
         
-        common_data.my_game_frontend.mode_of_tech_panel = "viewer"
+        cd.frontend.tech_panel_mode = "viewer"
         
         
-        for i in common_data.common_var.tech_order:
-            if common_data.my_game_frontend.wid[i].is_avaliable == 'no in mode lack of methods' or \
-                (common_data.my_stats.are_shown_unlocked_methods == False and common_data.my_game.is_tech_avaliable[i]==False)\
+        for i in cd.common_var.tech_order:
+            if cd.frontend.wid[i].is_available == 'no in mode lack of methods' or \
+                (cd.stats.are_shown_unlocked_methods == False and cd.mg.techs_avail_bool[i]==False)\
                or i == 2 or i == 9:
                 continue
             self.add_element_to_screen(i)
@@ -110,24 +110,24 @@ class TechViewer(BoxLayout):
     def close_self(self, instance):
         global tech_viewer
         
-        common_data.my_game_frontend.mode_of_tech_panel = "panel"
-        for i in common_data.common_var.tech_order:
-            if common_data.my_game_frontend.wid[i].is_avaliable == 'no in mode lack of methods' or \
-                (common_data.my_stats.are_shown_unlocked_methods == False and common_data.my_game.is_tech_avaliable[i]==False)\
+        cd.frontend.tech_panel_mode = "panel"
+        for i in cd.common_var.tech_order:
+            if cd.frontend.wid[i].is_available == 'no in mode lack of methods' or \
+                (cd.stats.are_shown_unlocked_methods == False and cd.mg.techs_avail_bool[i]==False)\
                or i == 2 or i == 9:
                 continue
         
-            common_data.my_game_frontend.wid[i].size_hint_x = 1
-            common_data.my_game_frontend.wid[i].width = 100
-            common_data.my_game_frontend.wid[i].pos_hint = {}
+            cd.frontend.wid[i].size_hint_x = 1
+            cd.frontend.wid[i].width = 100
+            cd.frontend.wid[i].pos_hint = {}
           
-            self.sm.get_screen(str(i)).sc.remove_widget(common_data.my_game_frontend.wid[i])        
-            common_data.page2.add_widget(common_data.my_game_frontend.wid[i])
+            self.sm.get_screen(str(i)).sc.remove_widget(cd.frontend.wid[i])        
+            cd.page2.add_widget(cd.frontend.wid[i])
             
-        common_data.page2_1.remove_widget(self)
+        cd.page2_1.remove_widget(self)
         for i in self.outer_folders:
             try:
-                common_data.page2_1.add_widget(i)   
+                cd.page2_1.add_widget(i)   
             except WidgetException:
                 print("[ERROR] with adding", i, "if it is notifier, don't worry")
         self.outer_folders = []

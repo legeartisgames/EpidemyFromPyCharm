@@ -119,7 +119,7 @@ class SpinnerOptions(SpinnerOption):
         self.background_normal = ''
         self.background_color = [0, 0.2, 0.3, 1]    # blue colour
         #self.size_hint_y = None
-        #self.height = sizes.Height_of_screen/8
+        #self.height = sizes.height_res/8
         self.font_size = sizes.ASK_SIZE
         self.markup = True
 
@@ -128,9 +128,9 @@ class SpinnerDropdown(DropDown):
     def __init__(self, **kwargs):
         super(SpinnerDropdown, self).__init__(**kwargs)
         self.auto_width = True
-        self.max_height = sizes.Height_of_screen*0.4
-        self.container.spacing = 3*sizes.Height_of_screen/720
-        #self.width = sizes.Width_of_screen/5
+        self.max_height = sizes.height_res*0.4
+        self.container.spacing = 3*sizes.height_res/720
+        #self.width = sizes.width_res/5
 
 
 class SpinnerWidget(Spinner):

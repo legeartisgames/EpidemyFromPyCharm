@@ -4,7 +4,7 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.label import Label
 from custom_kivy.my_scrollview import ScrollView
 
-import common_data
+import common_data as cd
 import common_var
 import country_variants
 import diseases
@@ -18,10 +18,10 @@ def custom_log(x):
     return (x**0.56)*2
 
 class Achieve_pannel(FloatLayout):
-    def __init__(self, size_of_rec = (50*sizes.Width_of_screen/1100, 10000*sizes.Height_of_screen/780), max_value = 10000, 
-                 points = [common_data.my_stats.goldreserves], text_sources = [
-                                                        ["У Вас: " + str(common_data.my_stats.goldreserves) + " монет",
-                                                        "You have: " + str(common_data.my_stats.goldreserves) + " coins"]
+    def __init__(self, size_of_rec = (50*sizes.width_res/1100, 10000*sizes.height_res/780), max_value = 10000, 
+                 points = [cd.stats.goldreserves], text_sources = [
+                                                        ["У Вас: " + str(cd.stats.goldreserves) + " монет",
+                                                        "You have: " + str(cd.stats.goldreserves) + " coins"]
                                                         ],
                 types = ["mine"], type_of_pannel = "gold",
                                                             
@@ -30,14 +30,14 @@ class Achieve_pannel(FloatLayout):
         is_above = [True]
         #values are normalized
         self.size_hint = (None, None)
-        self.size = (sizes.Width_of_screen, size_of_rec[1]*1.03)
+        self.size = (sizes.width_res, size_of_rec[1]*1.03)
         with self.canvas:
             #Color(.9, .8, .5,1)
             if type_of_pannel == 'gold':
                 Color(.15, .22, .42)
             elif type_of_pannel == 'stars':
                 Color(.15, .22, .42)
-            self.bar_rec = Rectangle(size = size_of_rec, pos = (sizes.Width_of_screen/7, self.size[1]*0.005))
+            self.bar_rec = Rectangle(size = size_of_rec, pos = (sizes.width_res/7, self.size[1]*0.005))
             
         max_value = custom_log(max_value)
         
@@ -73,9 +73,9 @@ class Achieve_pannel(FloatLayout):
             
             
         elif type_of_pannel == "stars":
-            for i in range(len(common_var.statuses_stars)):
+            for i in range(len(common_var.stars_statuses)):
                 points.append(common_var.thresh_hold_stars[i])
-                text_sources.append(common_var.statuses_stars[i])
+                text_sources.append(common_var.stars_statuses[i])
                 types.append("stars_status")      
                 
                 is_above.append(True)
@@ -132,7 +132,7 @@ class Achieve_pannel(FloatLayout):
                                       self.point_rec.pos[1] - self.point_rec.size[1]/2)
                     Arrow_with_text(parent = self, text_source = text_sources[i],
                                     pos_of_ar = (self.bar_rec.pos[0] + self.bar_rec.size[0]*3/4, real_achieve_points_coords[i]),
-                                    width = 300*sizes.Width_of_screen/1200, is_text_above = is_above[i])                    
+                                    width = 300*sizes.width_res/1200, is_text_above = is_above[i])                    
             
                 elif types[i] == "coins_status":
                     
@@ -153,8 +153,8 @@ class Achieve_pannel(FloatLayout):
             
 class Arrow_with_text():
     def __init__(self, parent, pos_of_ar = (0,0), text_source = ["Test_text" , "Test_text"],  
-                 width = 300*sizes.Width_of_screen/1200, height_of_cap = 15*sizes.Height_of_screen/700, width_of_cap = 60*sizes.Width_of_screen/1200,  
-                 height_of_line = 7*sizes.Height_of_screen/700, is_text_above = True,
+                 width = 300*sizes.width_res/1200, height_of_cap = 15*sizes.height_res/700, width_of_cap = 60*sizes.width_res/1200,  
+                 height_of_line = 7*sizes.height_res/700, is_text_above = True,
                  **kwargs): 
         super(Arrow_with_text, self).__init__(**kwargs) 
         self.parent = parent
@@ -187,7 +187,7 @@ class Arrow_with_text():
 
 class Line_with_text():
     def __init__(self, parent, pos_of_ar = (0,0), text_source = ["Test_text" , "Test_text"],  
-                 width = 350*sizes.Width_of_screen/1200, height_of_line = 7*sizes.Height_of_screen/700, typ = 'gold_status', 
+                 width = 350*sizes.width_res/1200, height_of_line = 7*sizes.height_res/700, typ = 'gold_status', 
                  is_text_above = True,
                  **kwargs):
         
@@ -235,15 +235,15 @@ class Achieve_Layout(FloatLayout):
         self.add_widget(uix_classes.Label_with_tr(text_source=["Шкала благосостояния:", 
                                                                "Scale of wealth:"], 
                                                   size_hint = (.5, .1), pos_hint = {'right':.5, 'top':.96}, halign = 'center',
-                                      font_size = (sizes.Width_of_screen/50)))
+                                      font_size = (sizes.width_res/50)))
         
         self.add_widget(uix_classes.Label_with_tr(text_source=["Шкала репутации:", 
                                                                "Scale of reputation:"], 
                                                   size_hint = (.5, .1), pos_hint = {'right': .98, 'top':.96}, halign = 'center',
-                                      font_size = (sizes.Width_of_screen/50)))
+                                      font_size = (sizes.width_res/50)))
         
         self.btn_close_pannel = uix_classes.Button_with_image(text_source = ["Закрыть панель", "Close bar"],
-                                                           on_press = self.close_layout, font_size = (sizes.Width_of_screen/50),
+                                                           on_press = self.close_layout, font_size = (sizes.width_res/50),
                                                            halign = 'center',
                                                            size_hint = (2/9, .15), pos_hint = {'right': .5+1/9, 'top':.96})
         self.add_widget(self.btn_close_pannel)
@@ -254,10 +254,10 @@ class Achieve_Layout(FloatLayout):
         self.achieve_pan_gold.parent.remove_widget(self.achieve_pan_gold)
         del self.achieve_pan_gold
         self.achieve_pan_gold = Achieve_pannel(max_value = 8000,
-                                               points = [common_data.my_stats.goldreserves], text_sources = [
-                                                        [icon_func.add_money_icon("У Вас: " + str(common_data.my_stats.goldreserves), 
+                                               points = [cd.stats.goldreserves], text_sources = [
+                                                        [icon_func.add_money_icon("У Вас: " + str(cd.stats.goldreserves), 
                                                                                   sizes.ACHIEVE_SIZE),
-                                                        icon_func.add_money_icon("You have: " + str(common_data.my_stats.goldreserves),
+                                                        icon_func.add_money_icon("You have: " + str(cd.stats.goldreserves),
                                                                                  sizes.ACHIEVE_SIZE)]
                                                         ], types = ["mine"], type_of_pannel = "gold")
         #self.achieve_pan.bind(height = self.achieve_pan.setter('height'))
@@ -268,10 +268,10 @@ class Achieve_Layout(FloatLayout):
         self.achieve_pan_stars.parent.remove_widget(self.achieve_pan_stars)
         del self.achieve_pan_stars
         self.achieve_pan_stars = Achieve_pannel(max_value = 5000,
-                                                points = [common_data.my_stats.stars], text_sources = [
-                                                        [icon_func.add_star_icon("У Вас: " + str(common_data.my_stats.stars),
+                                                points = [cd.stats.stars], text_sources = [
+                                                        [icon_func.add_star_icon("У Вас: " + str(cd.stats.stars),
                                                                                  sizes.ACHIEVE_SIZE),
-                                                        icon_func.add_star_icon("You have: " + str(common_data.my_stats.stars),
+                                                        icon_func.add_star_icon("You have: " + str(cd.stats.stars),
                                                                                 sizes.ACHIEVE_SIZE)]
                                                         ], types = ["mine"], type_of_pannel = "stars")
         #self.achieve_pan.bind(height = self.achieve_pan.setter('height'))
@@ -279,15 +279,15 @@ class Achieve_Layout(FloatLayout):
             
     def init_gold_pannel(self):
         self.achieve_scroll_gold = ScrollView(do_scroll_x = False, size_hint = (None, None),
-                                         size = (sizes.Width_of_screen/2, sizes.Height_of_screen*0.8), 
-                                         pos = (0, sizes.Height_of_screen*0.04),
+                                         size = (sizes.width_res/2, sizes.height_res*0.8), 
+                                         pos = (0, sizes.height_res*0.04),
                                scroll_type = ['bars', 'content'], bar_width = 8, bar_margin = 10, bar_pos_y = 'left')
         
         self.achieve_pan_gold = Achieve_pannel(max_value = 5500,
-                                               points = [common_data.my_stats.goldreserves], text_sources = [
-                                                        [icon_func.add_money_icon("У Вас: " + str(common_data.my_stats.goldreserves), 
+                                               points = [cd.stats.goldreserves], text_sources = [
+                                                        [icon_func.add_money_icon("У Вас: " + str(cd.stats.goldreserves), 
                                                                                   sizes.ACHIEVE_SIZE),
-                                                        icon_func.add_money_icon("You have: " + str(common_data.my_stats.goldreserves),
+                                                        icon_func.add_money_icon("You have: " + str(cd.stats.goldreserves),
                                                                                  sizes.ACHIEVE_SIZE)]
                                                         ], types = ["mine"], type_of_pannel = "gold")
         #self.achieve_pan.bind(height = self.achieve_pan.setter('height'))
@@ -295,37 +295,37 @@ class Achieve_Layout(FloatLayout):
         self.add_widget(self.achieve_scroll_gold)       
     def init_stars_pannel(self):
         self.achieve_scroll_stars = ScrollView(do_scroll_x = False, size_hint = (None, None),
-                                         size = (sizes.Width_of_screen/2, sizes.Height_of_screen*0.8), 
-                                         pos = (sizes.Width_of_screen/2, sizes.Height_of_screen*0.04),
+                                         size = (sizes.width_res/2, sizes.height_res*0.8), 
+                                         pos = (sizes.width_res/2, sizes.height_res*0.04),
                                scroll_type = ['bars', 'content'], bar_width = 8, bar_margin = 10)
         
         self.achieve_pan_stars = Achieve_pannel(max_value = 3000,
-                                                points = [common_data.my_stats.stars], text_sources = [
-                                                        [icon_func.add_star_icon("У Вас: " + str(common_data.my_stats.stars),
+                                                points = [cd.stats.stars], text_sources = [
+                                                        [icon_func.add_star_icon("У Вас: " + str(cd.stats.stars),
                                                                                  sizes.ACHIEVE_SIZE),
-                                                        icon_func.add_star_icon("You have: " + str(common_data.my_stats.stars),
+                                                        icon_func.add_star_icon("You have: " + str(cd.stats.stars),
                                                                                 sizes.ACHIEVE_SIZE)]
                                                         ], types = ["mine"], type_of_pannel = "stars")
         #self.achieve_pan.bind(height = self.achieve_pan.setter('height'))
         self.achieve_scroll_stars.add_widget(self.achieve_pan_stars)
         self.add_widget(self.achieve_scroll_stars)       
         
-    def open_layout(self, instance):
+    def open_layout(self, instance=None):
         self.update_content()
       
         self.outer_folders = []
-        for i in common_data.final_layout.children:
+        for i in cd.final_layout.children:
             self.outer_folders.append(i)
             
-        common_data.final_layout.clear_widgets()
-        common_data.final_layout.add_widget(self)
+        cd.final_layout.clear_widgets()
+        cd.final_layout.add_widget(self)
         self.achieve_scroll_gold.scroll_y = max(1 - self.achieve_pan_gold.mine_coord_hint, 0)
         self.achieve_scroll_stars.scroll_y = max(1 - self.achieve_pan_stars.mine_coord_hint, 0)
         
     def close_layout(self,instance):
-        common_data.final_layout.remove_widget(self)
+        cd.final_layout.remove_widget(self)
         for i in self.outer_folders:
-            common_data.final_layout.add_widget(i)  
+            cd.final_layout.add_widget(i)  
         #for i in self.children:
          #   del i
 

@@ -4,7 +4,7 @@ import common_var
 import graph_maker
 import icon_func
 import textures
-import common_data
+import common_data as cd
 import tech_info
 import sizes
 import uix_classes
@@ -17,31 +17,31 @@ from kivy.uix.label import Label
      
 Current_tech = -1
 def region_menu():
-    if widget_of_common_par.opened_ask_pannel_is != None:
-        widget_of_common_par.opened_ask_pannel_is.close_ask_pannel(instance = 3) 
+    if widget_of_common_par.opened_ask_panel != None:
+        widget_of_common_par.opened_ask_panel.close_ask_panel(instance = 3) 
     
-    widget_of_common_par.choose_tech_for_activation = widget_of_common_par.Ask_pannel()
-    several_reg = len(common_data.my_game.list_of_chosen)>1
+    widget_of_common_par.choose_tech_for_activation = widget_of_common_par.AskPanel()
+    several_reg = len(cd.mg.list_of_chosen)>1
     if several_reg:
         
         if common_var.lang == 0:
-            widget_of_common_par.choose_tech_for_activation.open_ask_pannel(texture = textures.texture_questions, 
-                                                                            messages = ["Вы выбрали регионы", "№" + str(common_data.my_game.list_of_chosen), "Что будем делать?"], color_texture = (1, 1, 1, .6))
+            widget_of_common_par.choose_tech_for_activation.open_ask_panel(texture = textures.texture_questions, 
+                                                                            messages = ["Вы выбрали регионы", "№" + str(cd.mg.list_of_chosen), "Что будем делать?"], color_texture = (1, 1, 1, .6))
         elif common_var.lang == 1:
-            widget_of_common_par.choose_tech_for_activation.open_ask_pannel(texture = textures.texture_questions, 
-                                                                            messages = ["You chose regions", "#" + str(common_data.my_game.list_of_chosen), "What do you want to do?"], color_texture = (1, 1, 1, .6))
+            widget_of_common_par.choose_tech_for_activation.open_ask_panel(texture = textures.texture_questions, 
+                                                                            messages = ["You chose regions", "#" + str(cd.mg.list_of_chosen), "What do you want to do?"], color_texture = (1, 1, 1, .6))
     else:
         if common_var.lang == 0:
-            widget_of_common_par.choose_tech_for_activation.open_ask_pannel(texture = textures.texture_questions, 
-                                                                            messages = ["Вы выбрали регион №" + str(common_data.my_game.list_of_chosen[0]), "Что будем делать?"], color_texture = (1, 1, 1, .6))
+            widget_of_common_par.choose_tech_for_activation.open_ask_panel(texture = textures.texture_questions, 
+                                                                            messages = ["Вы выбрали регион №" + str(cd.mg.list_of_chosen[0]), "Что будем делать?"], color_texture = (1, 1, 1, .6))
         elif common_var.lang == 1:
-            widget_of_common_par.choose_tech_for_activation.open_ask_pannel(texture = textures.texture_questions, 
-                                                                            messages = ["You chose region #" + str(common_data.my_game.list_of_chosen[0]), "What do you want to do?"], color_texture = (1, 1, 1, .6))
-    list_of_tech = [0]*len(common_data.my_game.list_of_tech_tr)
+            widget_of_common_par.choose_tech_for_activation.open_ask_panel(texture = textures.texture_questions, 
+                                                                            messages = ["You chose region #" + str(cd.mg.list_of_chosen[0]), "What do you want to do?"], color_texture = (1, 1, 1, .6))
+    list_of_tech = [0]*len(cd.mg.list_of_tech_tr)
     for i in range(len(list_of_tech)):
-        list_of_tech[i] = common_data.my_game.list_of_tech_tr[i][common_var.lang]
+        list_of_tech[i] = cd.mg.list_of_tech_tr[i][common_var.lang]
         
-    widget_of_common_par.spinner_for_tech = uix_classes.SpinnerWidget(sync_height = True, text = common_data.my_game.str_of_probably_activating_tech[common_var.lang])
+    widget_of_common_par.spinner_for_tech = uix_classes.SpinnerWidget(sync_height = True, text = cd.mg.str_of_probably_activating_tech[common_var.lang])
     widget_of_common_par.spinner_for_tech.font_size = sizes.ASK_SIZE
     widget_of_common_par.spinner_for_tech.values = list_of_tech
     
@@ -61,8 +61,8 @@ def region_menu():
     widget_of_common_par.choose_tech_for_activation.add_widget(btn_ask)
 
     
-    if len(common_data.my_game.list_of_chosen) == 1:
-        common_data.my_game.is_chosen_only_one = common_data.my_game.list_of_chosen[0]
+    if len(cd.mg.list_of_chosen) == 1:
+        cd.mg.is_chosen_only_one = cd.mg.list_of_chosen[0]
         btn_info = Button(text = ['Графики для региона', 'Region charts'][common_var.lang], size_hint = (.2, .1), 
                           pos=(widget_of_common_par.choose_tech_for_activation.active_zone.pos[0]+widget_of_common_par.choose_tech_for_activation.active_zone.size[0]*0.1, 
                                widget_of_common_par.choose_tech_for_activation.active_zone.pos[1]+ widget_of_common_par.choose_tech_for_activation.active_zone.size[1]*0.08), 
@@ -76,7 +76,7 @@ def region_menu():
 
 def make_pay_for_tech(instance):
     global Current_tech
-    widget_of_common_par.choose_tech_for_activation.close_ask_pannel(instance = 3)
+    widget_of_common_par.choose_tech_for_activation.close_ask_panel(instance = 3)
     Current_tech = widget_of_common_par.spinner_for_tech.text
     
     del widget_of_common_par.spinner_for_tech
@@ -91,92 +91,92 @@ def make_pay_for_tech(instance):
             break
     
     if ind != -1:
-        common_data.my_game.str_of_probably_activating_tech = tech_info.names_of_tech[ind]
+        cd.mg.str_of_probably_activating_tech = tech_info.names_of_tech[ind]
         if ind == 10:
-            common_data.my_game.str_of_probably_activating_tech = ["Вакцинация", "Vaccination"]
+            cd.mg.str_of_probably_activating_tech = ["Вакцинация", "Vaccination"]
 
     if ind == -1:      
-        common_data.my_game.str_of_probably_activating_tech = ["Пока нет методов\nдля региона", "No methods\nfor region yet"]
+        cd.mg.str_of_probably_activating_tech = ["Пока нет методов\nдля региона", "No methods\nfor region yet"]
         tex = ["Вы ещё не освоили методов для применения в регионах", "Yet you haven't got methods for using in regions"]
-        widget_of_common_par.inform_about_error(tex[common_var.lang], 'bad', 2.5)
+        widget_of_common_par.info_message(tex[common_var.lang], 'bad', 2.5)
                 
     else:
-        if (len(common_data.my_game.list_of_chosen) > 1): #если активируем на несколько гексов
+        if (len(cd.mg.list_of_chosen) > 1): #если активируем на несколько гексов
             
             skidka = 0
-            if common_data.my_game.prices_of_tech[ind][1] < -1:
+            if cd.mg.prices_of_tech[ind][1] < -1:
                 for i in range(common_var.n):
-                    if common_data.my_game.multichoice_list[i]==1:
-                        skidka += common_data.my_game.game_pars.is_automatisated[i]*common_data.my_game.parameters_of_tech[22][2][0]
-            statement = -common_data.my_game.prices_of_tech[ind][1]*len(common_data.my_game.list_of_chosen) <= common_data.my_game.game_pars.coins+skidka
+                    if cd.mg.multichoice_list[i]==1:
+                        skidka += cd.mg.pars.reg_automatisated[i]*cd.mg.parameters_of_tech[22][2][0]
+            statement = -cd.mg.prices_of_tech[ind][1]*len(cd.mg.list_of_chosen) <= cd.mg.pars.coins+skidka
             if ind == 25:
                 skidka = min(skidka, 1)
-                statement = -common_data.my_game.prices_of_tech[ind][1] <= common_data.my_game.game_pars.coins+skidka
-                archieve_par = common_data.my_game.parameters_of_tech[25][2][0]
-                common_data.my_game.parameters_of_tech[25][2][0] = 1-(1-common_data.my_game.parameters_of_tech[25][2][0])/len(common_data.my_game.list_of_chosen)
+                statement = -cd.mg.prices_of_tech[ind][1] <= cd.mg.pars.coins+skidka
+                archive_par = cd.mg.parameters_of_tech[25][2][0]
+                cd.mg.parameters_of_tech[25][2][0] = 1-(1-cd.mg.parameters_of_tech[25][2][0])/len(cd.mg.list_of_chosen)
             
             if statement:
                 
                 for i in range(common_var.n):
-                    if common_data.my_game.multichoice_list[i]==1:
+                    if cd.mg.multichoice_list[i]==1:
                         
                         
-                        common_func.Mult_on_par((common_data.my_game.parameters_of_tech[ind][0], i, common_data.my_game.parameters_of_tech[ind][2], common_data.my_game.parameters_of_tech[ind][3]), ind)
-                        common_data.my_game_frontend.hexes_chosen[i].hide_circle()
+                        common_func.Mult_on_par((cd.mg.parameters_of_tech[ind][0], i, cd.mg.parameters_of_tech[ind][2], cd.mg.parameters_of_tech[ind][3]), ind)
+                        cd.frontend.hexes_chosen[i].hide_circle()
                 
                 
                 if ind != 25:
                     
-                    common_data.my_game.game_pars.coins += (common_data.my_game.prices_of_tech[ind][1]*len(common_data.my_game.list_of_chosen)+skidka)
+                    cd.mg.pars.coins += (cd.mg.prices_of_tech[ind][1]*len(cd.mg.list_of_chosen)+skidka)
                 else:
-                    common_data.my_game.game_pars.coins += (common_data.my_game.prices_of_tech[ind][1]+skidka)
-                    common_data.my_game.parameters_of_tech[25][2][0] = archieve_par
-                common_data.my_game_frontend.game_pars.labels.str_of_money.text = icon_func.add_money_icon(string = str(common_data.my_game.game_pars.coins), size = common_data.my_game_frontend.game_pars.labels.str_of_money.font_size)
+                    cd.mg.pars.coins += (cd.mg.prices_of_tech[ind][1]+skidka)
+                    cd.mg.parameters_of_tech[25][2][0] = archive_par
+                cd.frontend.pars.labels.cash_label.text = icon_func.add_money_icon(string = str(cd.mg.pars.coins), size = cd.frontend.pars.labels.cash_label.font_size)
                 
-                common_data.my_game.multichoice_list = [0]*21
-                common_data.my_game.list_of_chosen = []
+                cd.mg.multichoice_list = [0]*21
+                cd.mg.list_of_chosen = []
                 
         
             else:            
                 tex = ["У вас не хватает денег на данное действие", "You haven't enough money for this action"]
-                widget_of_common_par.inform_about_error(tex[common_var.lang], 'bad', 2)            
+                widget_of_common_par.info_message(tex[common_var.lang], 'bad', 2)            
         
         else: #если на один гекс
             skidka = 0
-            if common_data.my_game.prices_of_tech[ind][1] < -1:
-                for i in range(common_data.my_game.n):
-                    if i == common_data.my_game.is_chosen_only_one:               
-                        skidka = common_data.my_game.game_pars.is_automatisated[i]*common_data.my_game.parameters_of_tech[22][2][0]
+            if cd.mg.prices_of_tech[ind][1] < -1:
+                for i in range(cd.mg.n):
+                    if i == cd.mg.is_chosen_only_one:               
+                        skidka = cd.mg.pars.reg_automatisated[i]*cd.mg.parameters_of_tech[22][2][0]
                 
-            if -common_data.my_game.prices_of_tech[ind][1] <= common_data.my_game.game_pars.coins + skidka:
+            if -cd.mg.prices_of_tech[ind][1] <= cd.mg.pars.coins + skidka:
                 
-                for i in range(common_data.my_game.n):
-                    if i == common_data.my_game.is_chosen_only_one:
-                        common_func.Mult_on_par((common_data.my_game.parameters_of_tech[ind][0], 
-                                                 i, common_data.my_game.parameters_of_tech[ind][2], common_data.my_game.parameters_of_tech[ind][3], 1), ind)
-                        common_data.my_game_frontend.hexes_chosen[i].hide_circle()
-                        common_data.my_game.game_pars.coins += (common_data.my_game.prices_of_tech[ind][1]+skidka)
+                for i in range(cd.mg.n):
+                    if i == cd.mg.is_chosen_only_one:
+                        common_func.Mult_on_par((cd.mg.parameters_of_tech[ind][0], 
+                                                 i, cd.mg.parameters_of_tech[ind][2], cd.mg.parameters_of_tech[ind][3], 1), ind)
+                        cd.frontend.hexes_chosen[i].hide_circle()
+                        cd.mg.pars.coins += (cd.mg.prices_of_tech[ind][1]+skidka)
                         
-                        common_data.my_game_frontend.game_pars.labels.str_of_money.text = icon_func.add_money_icon(string = str(common_data.my_game.game_pars.coins), size = common_data.my_game_frontend.game_pars.labels.str_of_money.font_size)                        
-                common_data.my_game.multichoice_list = [0]*21
-                common_data.my_game.list_of_chosen = []
+                        cd.frontend.pars.labels.cash_label.text = icon_func.add_money_icon(string = str(cd.mg.pars.coins), size = cd.frontend.pars.labels.cash_label.font_size)                        
+                cd.mg.multichoice_list = [0]*21
+                cd.mg.list_of_chosen = []
             else:         
                 tex = ["У вас не хватает денег на данное действие", "You haven't enough money for this action"]
-                widget_of_common_par.inform_about_error(tex[common_var.lang], 'bad', 2) 
+                widget_of_common_par.info_message(tex[common_var.lang], 'bad', 2) 
                 
-            common_data.my_game.is_chosen_only_one = 'not exists'
+            cd.mg.is_chosen_only_one = 'not exists'
             
             
             
 def choose_graph(instance):
     
-    widget_of_common_par.graph_menu = widget_of_common_par.Ask_pannel()
+    widget_of_common_par.graph_menu = widget_of_common_par.AskPanel()
     
     if common_var.lang == 0:
-        widget_of_common_par.graph_menu.open_ask_pannel(texture = textures.texture_questions, 
+        widget_of_common_par.graph_menu.open_ask_panel(texture = textures.texture_questions, 
                                                                         messages = ["Какой график Вы хотите увидеть?", "Выберите величину для оси Y, на оси X будет время"], color_texture = (1, 1, 1, .6))
     elif common_var.lang == 1:
-        widget_of_common_par.graph_menu.open_ask_pannel(texture = textures.texture_questions, 
+        widget_of_common_par.graph_menu.open_ask_panel(texture = textures.texture_questions, 
                                                                         messages = ["What graph do you want to see?", "Choose what will be on y-axis, on x-axis is time"], color_texture = (1, 1, 1, .6))
     
     widget_of_common_par.spinner_for_graph = uix_classes.SpinnerWidget(sync_height = True, text = ["Нажмите для выбора", "Press to open menu"][common_var.lang], markup=True)
@@ -184,7 +184,7 @@ def choose_graph(instance):
     widget_of_common_par.spinner_for_graph.values = [["Больные", "Умершие", "Выздоровевшие", "z_in*z_out", "Процент иммунных", "Заболевающие\n за день", "Умирающие\nза день", "Выздоровевшие\n за день"], 
                                                      ["[font=fonts/Verdana.ttf]Ill[/font]", "Dead", "Recovered", "z_in*z_out", "Percent of immune", "Ill per day", "Dead per day", "Recovered\n per day"]][common_var.lang]
 
-    if len(common_data.my_game.list_of_chosen) > 1:
+    if len(cd.mg.list_of_chosen) > 1:
         widget_of_common_par.spinner_for_graph.values.remove('z_in*z_out')
         widget_of_common_par.spinner_for_graph.values.append(['Штрафные баллы', 'Penalty points'][common_var.lang])
         

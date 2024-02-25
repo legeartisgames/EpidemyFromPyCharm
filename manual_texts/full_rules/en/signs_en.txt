@@ -15,7 +15,7 @@ d is responsible for the increase in the number of deaths. If this turn in this 
 - [b][color=e69719]Ill[/b][/color] of a given region - the same as the number of ill people in the region.
 - [b][color=e69719]Dead [/b][/color] of this region - the same as the number of deaths (due to the epidemic) in the region.
 
-- [b][color=e69719]Transfer coefficient[/b][/color] (aka[b][color=e69719]Transfer[/b][/color]) - coefficient showing the effect of interaction between regions among themselves to an increase in the number of patients.
+- [b][color=e69719]Spread coefficient[/b][/color] (aka[b][color=e69719]Spread[/b][/color]) - coefficient showing the effect of interaction between regions among themselves to an increase in the number of patients.
     
     Suppose we have 2 neighboring regions (A and B), the transfer coefficient between them = c, the number of patients in region A = X, in region A there are a people, and in region B - b. Then, on the next turn, the number of patients in region B will increase due to interaction with region A.
 to c * X * z_in region B * 2 * √(a * b) / (a + b). The lower transfer coefficient is, the better.

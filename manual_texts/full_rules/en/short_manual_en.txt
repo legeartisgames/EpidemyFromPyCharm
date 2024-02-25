@@ -44,7 +44,7 @@ The game is split into turns, i.e. months. When you end a turn (we can say that 
 [b][color=e69719]Income[/color][/b] - after each turn, the number of coins in the assets of your country increases by the value of income.
 [b][color=e69719]coins (Coins)[/color][/b] - the size of the country's assets, i.e. the amount of funds in your country.
 
-[b][color=e69719]Transfer coefficient[/color][/b] (aka [b][color=e69719]Transfer[/b][/color]) - the value at a high value of which the number of patients in the region increases greatly in the neighboring regions.
+[b][color=e69719]Spread coefficient[/color][/b] (aka [b][color=e69719]Spread[/b][/color]) - the value at a high value of which the number of patients in the region increases greatly in the neighboring regions.
 
 [color=1ea814][b]Victory points[/color][/b] - if you get 5 victory points, you will win.
 [color=e02d33][b]Penalty points[/color][/b] - if you get 25 penalty points (or some other number - see the second number in the "Penalty points" section of the panel on the left), then you will lose.

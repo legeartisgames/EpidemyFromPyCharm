@@ -1,5 +1,5 @@
 
-import common_data
+import common_data as cd
 import common_var
 import frases
 #from kivy.core.window import Window
@@ -61,29 +61,29 @@ class Info_Layout(BoxLayout):
         self.effect.scroll = 10
         
         self.orientation = 'vertical'
-        self.add_widget(uix_classes.Button_with_image(text_source = frase_close, on_press = self.close_manual, size_hint_y = .2, font_size = int(sizes.Width_of_screen/30)))
-        self.text_rules = ScrollView(size_hint_y = .8, do_scroll_x=False, bar_color = [.35, .35, .25, 1], bar_margin = sizes.Height_of_screen*0.04, bar_width = 10, scroll_type = ['bars', 'content'])
+        self.add_widget(uix_classes.Button_with_image(text_source = frase_close, on_press = self.close_manual, size_hint_y = .2, font_size = int(sizes.width_res/30)))
+        self.text_rules = ScrollView(size_hint_y = .8, do_scroll_x=False, bar_color = [.35, .35, .25, 1], bar_margin = sizes.height_res*0.04, bar_width = 10, scroll_type = ['bars', 'content'])
         
-        self.text_rules.rules_label = uix_classes.WrappedLabel(padding = (sizes.Width_of_screen*0.06, sizes.Height_of_screen*0.06),
-                                                        text = icon_func.letter_to_icons_increasing_size(string = rules_strings[typ][common_var.lang], size = int(sizes.Width_of_screen/40), coef = 1.6), 
-                                                        font_size = int(sizes.Width_of_screen/40), 
-                                                        markup = True, size_hint_y = None, height = sizes.Height_of_screen*3)        
+        self.text_rules.rules_label = uix_classes.WrappedLabel(padding = (sizes.width_res*0.06, sizes.height_res*0.06),
+                                                        text = icon_func.letter_to_icons_increasing_size(string = rules_strings[typ][common_var.lang], size = int(sizes.width_res/40), coef = 1.6), 
+                                                        font_size = int(sizes.width_res/40), 
+                                                        markup = True, size_hint_y = None, height = sizes.height_res*3)        
         self.text_rules.add_widget(self.text_rules.rules_label)
         self.add_widget(self.text_rules)
         self.outer_folders = []
         
     def open_manual(self, instance):
         self.outer_folders = []
-        for i in common_data.final_layout.children:
+        for i in cd.final_layout.children:
             self.outer_folders.append(i)
-        common_data.final_layout.clear_widgets()
-        common_data.final_layout.add_widget(self)
-        self.text_rules.rules_label.text = icon_func.letter_to_icons_increasing_size(string=rules_strings[self.typ][common_var.lang], size = int(sizes.Width_of_screen/40), coef = 2)
+        cd.final_layout.clear_widgets()
+        cd.final_layout.add_widget(self)
+        self.text_rules.rules_label.text = icon_func.letter_to_icons_increasing_size(string=rules_strings[self.typ][common_var.lang], size = int(sizes.width_res/40), coef = 2)
         
     def close_manual(self,instance):
-        common_data.final_layout.remove_widget(self)
+        cd.final_layout.remove_widget(self)
         for i in self.outer_folders:
-            common_data.final_layout.add_widget(i)
+            cd.final_layout.add_widget(i)
             
         
 #about_info = Info_Layout(frase_close = ["Закрыть информацию о нас", "Close info"], typ = 'about_us')   

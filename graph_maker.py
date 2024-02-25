@@ -1,4 +1,4 @@
-import common_data
+import common_data as cd
 import common_var
 import sizes
 import spec_func 
@@ -51,11 +51,11 @@ class Graph_shower(FloatLayout):
     
         x = [i for i in range(len(self.database))]
             
-        if len(common_data.my_game.list_of_chosen) > 1 or self.for_country == True:
+        if len(cd.mg.list_of_chosen) > 1 or self.for_country == True:
             print("Warning with graph: not one region (may be graph for total country?)")
             y = list(self.database)
         else:
-            y = [self.database[i][common_data.my_game.is_chosen_only_one] for i in range(len(self.database))]     
+            y = [self.database[i][cd.mg.is_chosen_only_one] for i in range(len(self.database))]     
             
         if len(x)!=1:
             marker_size = 0
@@ -95,7 +95,7 @@ class Graph_shower(FloatLayout):
                 xloc = plt.MaxNLocator(min(8, len(x)+2))
                 figure.xaxis.set_major_formatter(mdates.DateFormatter('%b, %Y'))#названия месяцев
             else:
-                sd = common_data.my_game.My_disease.start_date
+                sd = cd.mg.My_disease.start_date
                 sd_pre = spec_func.month_back(sd)
                 sd_pre = spec_func.month_back(sd_pre)
                 sd_fut = spec_func.two_weeks_go(sd)
@@ -204,8 +204,8 @@ class Graph_shower(FloatLayout):
         ylabels = labels
         figure.set_yticklabels(ylabels)
         
-        s_month = common_data.my_game.My_disease.start_date[1]-1#путаница: start_date меряет месяцы от 1 до 12, а мы тут от 0 до 11
-        s_year = common_data.my_game.My_disease.start_date[2]
+        s_month = cd.mg.My_disease.start_date[1]-1#путаница: start_date меряет месяцы от 1 до 12, а мы тут от 0 до 11
+        s_year = cd.mg.My_disease.start_date[2]
         if self.typ != 'z_in':
             s_month+=1
             if s_month == 12:
@@ -264,10 +264,10 @@ class Graph_shower(FloatLayout):
         
     def open(self, instance):
         self.outer_folders = []
-        for i in common_data.final_layout.children:
+        for i in cd.final_layout.children:
             self.outer_folders.append(i)
-        common_data.final_layout.clear_widgets()
-        common_data.final_layout.add_widget(self)   
+        cd.final_layout.clear_widgets()
+        cd.final_layout.add_widget(self)   
         self.lab_loading = Label(text = ["Строим график... (подождите пару секунд)\nВ первый раз график будет строиться медленнее", "Buiding graph in progress... (wait ~ 2-3 sec)\nFor the first time it may be slower"][common_var.lang],
                                  font_size = sizes.WIN_SIZE*1.2)
         self.add_widget(self.lab_loading)
@@ -279,9 +279,9 @@ class Graph_shower(FloatLayout):
                 self.close(instance=5)
     
     def close (self, instance):
-        common_data.final_layout.remove_widget(self)
+        cd.final_layout.remove_widget(self)
         for i in self.outer_folders:
-            common_data.final_layout.add_widget(i)  
+            cd.final_layout.add_widget(i)  
         
 
 
@@ -292,65 +292,65 @@ def make_graph(typ, for_country = False):
     print('graph type: ', type)
     text_of_title = ''
     database = []
-    reg_ind = common_data.my_game.is_chosen_only_one
-    name_ru = common_data.my_game.My_Country.names_of_provinces[reg_ind][0]
-    name_en = common_data.my_game.My_Country.names_of_provinces[reg_ind][1]
+    reg_ind = cd.mg.is_chosen_only_one
+    name_ru = cd.mg.My_Country.names_of_provinces[reg_ind][0]
+    name_en = cd.mg.My_Country.names_of_provinces[reg_ind][1]
     if type =='ill':
       
-        database = 'common_data.my_game.archieve_quant_of_ill'
-        text_of_title = ['Больные '+common_data.my_game.My_disease.padezhi[4]+' в регионе №'+ str(reg_ind) + ' ('+name_ru+')', 
-                         'Sick with ' +common_data.my_game.My_disease.small_name[1]+' people in '+ name_en +' (region #'+ str(reg_ind) + ')']
+        database = 'cd.mg.archive_quant_of_ill'
+        text_of_title = ['Больные '+cd.mg.My_disease.padezhi[4]+' в регионе №'+ str(reg_ind) + ' ('+name_ru+')', 
+                         'Sick with ' +cd.mg.My_disease.small_name[1]+' people in '+ name_en +' (region #'+ str(reg_ind) + ')']
         
     elif type == 'dead' or type == 'd_in':
-        database = 'common_data.my_game.archieve_quant_of_dead'
-        text_of_title = ['Умершие от '+common_data.my_game.My_disease.padezhi[1]+' в регионе №'+ str(reg_ind)  + ' (' + name_ru + ')', 
-                         'Deceased from '+common_data.my_game.My_disease.small_name[1]+' in '+ name_en +' (region #'+ str(reg_ind) + ')']
+        database = 'cd.mg.archive_quant_of_dead'
+        text_of_title = ['Умершие от '+cd.mg.My_disease.padezhi[1]+' в регионе №'+ str(reg_ind)  + ' (' + name_ru + ')', 
+                         'Deceased from '+cd.mg.My_disease.small_name[1]+' in '+ name_en +' (region #'+ str(reg_ind) + ')']
             
     elif type == 'z_in':
-        database = 'common_data.my_game.archieve_z_in_out'
+        database = 'cd.mg.archive_z_in_out'
         text_of_title = ['z_in*z_out в регионе №' + str(reg_ind) +' (' + name_ru + ')' + ' от времени', 
                          'z_in*z_out in '+ name_en +' (region #'+ str(reg_ind) + ')' + ' versus time graph']
                    
     elif type == 'recovered':
-        database = 'common_data.my_game.archieve_recovered'
-        text_of_title = ['Случаи выздоровления от '+common_data.my_game.My_disease.padezhi[1]+' в регионе №' + str(reg_ind) + ' (' + name_ru +')' , 
-                         'Cases of recovery from ' + common_data.my_game.My_disease.small_name[1] + ' in ' + name_en + ' (region #'+ str(reg_ind) + ')']
+        database = 'cd.mg.archive_recovered'
+        text_of_title = ['Случаи выздоровления от '+cd.mg.My_disease.padezhi[1]+' в регионе №' + str(reg_ind) + ' (' + name_ru +')' , 
+                         'Cases of recovery from ' + cd.mg.My_disease.small_name[1] + ' in ' + name_en + ' (region #'+ str(reg_ind) + ')']
             
     elif type == 'new_ill':
-        text_of_title = ['Заболевающие за день ' + common_data.my_game.My_disease.padezhi[4] +' в регионе №' + str(reg_ind) + ' (' + name_ru +')' , 
-                         'Daily cases of ' +common_data.my_game.My_disease.small_name[1]+' in ' + name_en + ' (region #'+ str(reg_ind) + ')']
+        text_of_title = ['Заболевающие за день ' + cd.mg.My_disease.padezhi[4] +' в регионе №' + str(reg_ind) + ' (' + name_ru +')' , 
+                         'Daily cases of ' +cd.mg.My_disease.small_name[1]+' in ' + name_en + ' (region #'+ str(reg_ind) + ')']
           
-        database = 'common_data.my_game.archieve_new_ill'
+        database = 'cd.mg.archive_new_ill'
     elif type == 'new_dead':
-        database = 'common_data.my_game.archieve_new_dead'
-        text_of_title = ['Умирающие за день в регионе №' + str(reg_ind) + ' (' + name_ru +')' +' от ' + common_data.my_game.My_disease.padezhi[1], 
-                         'Daily deceased from ' + common_data.my_game.My_disease.small_name[1] + ' in '+ name_en +' (region #'+ str(reg_ind) + ')']
+        database = 'cd.mg.archive_new_dead'
+        text_of_title = ['Умирающие за день в регионе №' + str(reg_ind) + ' (' + name_ru +')' +' от ' + cd.mg.My_disease.padezhi[1], 
+                         'Daily deceased from ' + cd.mg.My_disease.small_name[1] + ' in '+ name_en +' (region #'+ str(reg_ind) + ')']
             
     elif type == 'new_recovered':
-        database = 'common_data.my_game.archieve_new_recovered'
-        text_of_title = ['Выздоровевшие от '+common_data.my_game.My_disease.padezhi[1]+' в регионе №' + str(reg_ind) + ' (' + name_ru +')' + ' за день', 
-                         'Daily cases of recovery from ' + common_data.my_game.My_disease.small_name[1] + ' in '+ name_en +' (region #'+ str(reg_ind) + ')']
+        database = 'cd.mg.archive_new_recovered'
+        text_of_title = ['Выздоровевшие от '+cd.mg.My_disease.padezhi[1]+' в регионе №' + str(reg_ind) + ' (' + name_ru +')' + ' за день', 
+                         'Daily cases of recovery from ' + cd.mg.My_disease.small_name[1] + ' in '+ name_en +' (region #'+ str(reg_ind) + ')']
     elif type == 'pr_immune':
-        database = 'common_data.my_game.archieve_proc_immunated'
+        database = 'cd.mg.archive_proc_immunated'
         
-        text_of_title = ['Процент иммунных к '+common_data.my_game.My_disease.padezhi[2]+' в регионе №' + str(reg_ind) + ' (' + name_ru +')' , 
-                         'Percent of immune for ' + common_data.my_game.My_disease.small_name[1]+ ' people in '+ name_en +' (region #'+ str(reg_ind) + ')']
+        text_of_title = ['Процент иммунных к '+cd.mg.My_disease.padezhi[2]+' в регионе №' + str(reg_ind) + ' (' + name_ru +')' , 
+                         'Percent of immune for ' + cd.mg.My_disease.small_name[1]+ ' people in '+ name_en +' (region #'+ str(reg_ind) + ')']
         
     elif type == 'pen_points':
-        database = 'common_data.my_game.archieve_penalty_points'
+        database = 'cd.mg.archive_penalty_points'
         
         text_of_title = ['Число штрафных баллов в регионе №' + str(reg_ind), 
                          'Penalty points in region #'+ str(reg_ind)]
     
-    if len(common_data.my_game.list_of_chosen) > 1 or for_country == True:
+    if len(cd.mg.list_of_chosen) > 1 or for_country == True:
         print('total country graph')    
         type+='_sum'
         database+='_sum'
         if len(text_of_title[0].split(')'))>1:
-            text_of_title[0] = text_of_title[0].split('регионе')[0] + common_data.my_game.My_Country.pp_name + text_of_title[0].split(')')[1]
+            text_of_title[0] = text_of_title[0].split('регионе')[0] + cd.mg.My_Country.prepositional_case + text_of_title[0].split(')')[1]
         else:
-            text_of_title[0] = text_of_title[0].split('регионе')[0] + common_data.my_game.My_Country.pp_name      
-        text_of_title[1] = text_of_title[1].split(' in')[0] + ' in ' + common_data.my_game.My_Country.name[1]
+            text_of_title[0] = text_of_title[0].split('регионе')[0] + cd.mg.My_Country.prepositional_case
+        text_of_title[1] = text_of_title[1].split(' in')[0] + ' in ' + cd.mg.My_Country.name[1]
         text_of_title = [text_of_title[0],
                         text_of_title[1]]
         print(text_of_title)

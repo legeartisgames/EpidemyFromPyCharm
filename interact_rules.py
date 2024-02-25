@@ -1,4 +1,4 @@
-import common_data
+import common_data as cd
 import common_var
 import icon_func
 import info_carousel
@@ -143,24 +143,24 @@ class RulePage(FloatLayout):
     def __init__(self, typ = 'about', **kwargs):
         super(RulePage, self).__init__(**kwargs)
         self.num = rules_strings[typ]['index']
-        self.size = (sizes.Width_of_screen, sizes.Height_of_screen)
+        self.size = (sizes.width_res, sizes.height_res)
         
         if self.num < 17:
             
             self.btn_go_forward = uix_classes.Button_with_image(text_source = ['Следующая страница->', 'Next page ->'], 
                                                             font_size = sizes.textsize_normal(22), 
-                                                            pos = (.69*sizes.Width_of_screen, .03*sizes.Height_of_screen),
+                                                            pos = (.69*sizes.width_res, .03*sizes.height_res),
                                                             size_hint = [None, None], 
-                                                            size = (sizes.Width_of_screen*0.26, sizes.Height_of_screen*0.11),
+                                                            size = (sizes.width_res*0.26, sizes.height_res*0.11),
                                                             on_press = lambda *args: self.open_page(self.num+1, *args))
             self.add_widget(self.btn_go_forward)
         else:
             
             self.btn_go_forward = uix_classes.Button_with_image(text_source = ['Закрыть правила', 'Close rules'], 
                                                             font_size = sizes.textsize_normal(22), 
-                                                            pos = (.69*sizes.Width_of_screen, .03*sizes.Height_of_screen),
+                                                            pos = (.69*sizes.width_res, .03*sizes.height_res),
                                                             size_hint = [None, None], 
-                                                            size = (sizes.Width_of_screen*0.26, sizes.Height_of_screen*0.11),
+                                                            size = (sizes.width_res*0.26, sizes.height_res*0.11),
                                                             on_press = self.close_self)
             self.add_widget(self.btn_go_forward)
             
@@ -168,17 +168,17 @@ class RulePage(FloatLayout):
             
             self.btn_go_backward = uix_classes.Button_with_image(text_source = ['<-Предыдущая страница', '<- Previous Page'], 
                                                              font_size = sizes.textsize_normal(22),
-                                                             pos = (.05*sizes.Width_of_screen, .03*sizes.Height_of_screen),
+                                                             pos = (.05*sizes.width_res, .03*sizes.height_res),
                                                              size_hint = [None, None], 
-                                                             size = (sizes.Width_of_screen*0.26, sizes.Height_of_screen*0.11),
+                                                             size = (sizes.width_res*0.26, sizes.height_res*0.11),
                                                              on_press = lambda *args: self.open_page(self.num-1, *args))
             self.add_widget(self.btn_go_backward)  
         else:
             self.btn_go_backward = uix_classes.Button_with_image(text_source = ['Закрыть правила', 'Close rules'], 
                                                              font_size = sizes.textsize_normal(22),
-                                                             pos = (.05*sizes.Width_of_screen, .03*sizes.Height_of_screen),
+                                                             pos = (.05*sizes.width_res, .03*sizes.height_res),
                                                              size_hint = [None, None], 
-                                                             size = (sizes.Width_of_screen*0.26, sizes.Height_of_screen*0.11),
+                                                             size = (sizes.width_res*0.26, sizes.height_res*0.11),
                                                              on_press = self.close_self)
             self.add_widget(self.btn_go_backward)
         
@@ -190,27 +190,27 @@ class RulePage(FloatLayout):
             
         self.title = Label(text = rules_strings[typ]['names'][common_var.lang] + addition, 
                            font_size = sizes.textsize_normal(29), 
-                           pos = (.15*sizes.Width_of_screen, .87*sizes.Height_of_screen),
+                           pos = (.15*sizes.width_res, .87*sizes.height_res),
                            size_hint = [None, None], valign = 'top',
-                           size = (sizes.Width_of_screen*0.7, sizes.Height_of_screen*0.1),
+                           size = (sizes.width_res*0.7, sizes.height_res*0.1),
                            color = [1, 0, 0, 1],
                            on_press = lambda *args: self.open_page(1, *args),
                            markup = True, bold = True)
         
         self.add_widget(self.title)
         
-        self.text_rules = ScrollView(size_hint = [.86, .72], pos = (0.07*sizes.Width_of_screen, sizes.Height_of_screen*0.13),
+        self.text_rules = ScrollView(size_hint = [.86, .72], pos = (0.07*sizes.width_res, sizes.height_res*0.13),
                                      do_scroll_x=False, bar_color = [.35, .35, .25, 1], 
-                                     bar_margin = sizes.Height_of_screen*0.04, bar_width = 10, 
+                                     bar_margin = sizes.height_res*0.04, bar_width = 10, 
                                      scroll_type = ['bars', 'content'])
         if self.num == 14:#country info
             r_text = rules_strings[typ]['texts'][common_var.lang]
         else:
-            r_text = icon_func.letter_to_icons_increasing_size(string = rules_strings[typ]['texts'][common_var.lang], size = int(sizes.Width_of_screen/40), coef = 1.6)
-        self.text_rules.rules_label = uix_classes.WrappedLabel(padding = (sizes.Width_of_screen*0.06, sizes.Height_of_screen*0.06),
+            r_text = icon_func.letter_to_icons_increasing_size(string = rules_strings[typ]['texts'][common_var.lang], size = int(sizes.width_res/40), coef = 1.6)
+        self.text_rules.rules_label = uix_classes.WrappedLabel(padding = (sizes.width_res*0.06, sizes.height_res*0.06),
                                                         text = r_text, 
                                                         font_size = sizes.textsize_normal(25.5), halign = 'left',
-                                                        markup = True, size_hint_y = None, height = sizes.Height_of_screen*3)  
+                                                        markup = True, size_hint_y = None, height = sizes.height_res*3)  
         if self.num == 1:
             self.text_rules.rules_label.bind(on_ref_press = lambda *args: go_to_page_from_contents(*args))
         if self.num == 17 or self.num == 10:
@@ -225,11 +225,11 @@ class RulePage(FloatLayout):
         for i in rules_dict.keys():
             if rules_dict[i]['index'] == index:
                 
-                common_data.final_layout.remove_widget(rp)
+                cd.final_layout.remove_widget(rp)
              
                 del rp
                 rp = RulePage(typ = i)
-                common_data.final_layout.add_widget(rp)  
+                cd.final_layout.add_widget(rp)  
                 
   
         
@@ -237,19 +237,19 @@ class RulePage(FloatLayout):
     def open_self(self, instance):
         global outer_folders, rp
         outer_folders = []
-        for i in common_data.final_layout.children:
+        for i in cd.final_layout.children:
             outer_folders.append(i)
-        common_data.final_layout.clear_widgets()
-        common_data.final_layout.add_widget(rp)
+        cd.final_layout.clear_widgets()
+        cd.final_layout.add_widget(rp)
         if self!=rp:
             print("Different interact rules exemplars! Warning!")
             del self 
         
     def close_self(self, instance):
         global outer_folders
-        common_data.final_layout.remove_widget(self)
+        cd.final_layout.remove_widget(self)
         for i in outer_folders:
-            common_data.final_layout.add_widget(i)        
+            cd.final_layout.add_widget(i)        
         outer_folders = []
                 
 def go_to_page_from_contents(instance, value):

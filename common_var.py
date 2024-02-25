@@ -1,13 +1,14 @@
-WAS_STOP = False #связано с багом в kivy, при котором on_stop вызывается 2 раза
+WAS_STOP = False  # связано с багом в kivy, при котором on_stop вызывается 2 раза
 IS_PREMIUM = False
+VERSION_ID = 24
 
 lang = 0
 previous_lang = 0
-list_of_btns = [] #for translate
+list_of_btns = []  # for translate
 
 NUM_OF_LANGS = 2
 
-QUANT_OF_TECH = 32 #суммарное число технологий (+ инвестиций)
+QUANT_OF_TECH = 32  # суммарное число технологий (+ инвестиций)
 QUANT_OF_DIS = 3
 tech_order = (0, 1, 28,  
               3, 4, 5, 
@@ -23,7 +24,7 @@ tech_order = (0, 1, 28,
 is_game_running = "in_main_menu"
 is_open_tech = 0
 is_victory = "none"
-K = 0 #coumns = 3/K
+tech_cols_num = 3  # K was 3/it
 
 n = 21
 n_max = 21
@@ -35,12 +36,13 @@ Current_dis = None
 statuses_coins = [["Индивидуальный\nпредприниматель (№1)", "Individual\nentrepreneur (#1)"], 
                   ["Владелец небольшой\n компании (№2)", "Small company owner  (#2)"], 
                   ["Бизнесмен (№3)", "Businessman (#3)"], ["Капиталист (№4)", "Capitalist (#4)"], 
-                  ["Промышленник (№5)", "Industrialist (#5)"], ["Богач (№6)", "Rich (#6)"], ["Монополист (№7)", "Monopolist (#7)"], 
-                  ["Миллиардер (№8)", "Billionaire (#8)"], ["Магнат (№9)", "Tycoon (№9)"], ["Олигарх (№10)", "Powerful (#10)"]]
+                  ["Промышленник (№5)", "Industrialist (#5)"], ["Богач (№6)", "Rich (#6)"],
+                  ["Монополист (№7)", "Monopolist (#7)"], ["Миллиардер (№8)", "Billionaire (#8)"],
+                  ["Магнат (№9)", "Tycoon (№9)"], ["Олигарх (№10)", "Powerful (#10)"]]
 
 thresh_hold_coins = [0, 10, 110, 200, 400, 725, 1200, 1800, 2500, 50000]
 
-statuses_stars = [["Гость (№1)", "Guest  (#1)"],   ["Начинающий (№2)", "Beginner (#2)"], 
+stars_statuses = [["Гость (№1)", "Guest  (#1)"],   ["Начинающий (№2)", "Beginner (#2)"], 
                   ["Дилетант (№3)", "Amateur (#3)"], ["Фанат (№4)", "Fan (#4)"], 
                   ["Кандидат (№5)", "Candidate (#5)"], ["Специалист (№6)", "Specialist (#6)"], 
                   ["Мастер (№7)", "Master (#7)"], ["Эксперт (№8)", "Expert (#8)"], 

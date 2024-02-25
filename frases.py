@@ -2,7 +2,7 @@ str_play_with_this_country = ["Играть за эту страну!", "Play wi
 str_about_app = ["О программе", "About application"]
 str_activate_tech = ["Активировать\nметод!", "Activate\nmethod"]
 str_capital = ["Столица", "Capital"]
-str_carryover = ["Перенос  ", "Transfer  "]
+str_carryover = ["Перенос  ", "Spread  "]
 
 str_change_resolution = ["Выбор разрешения\nэкрана", "Change resolution\nof screen"]
 str_check = ["Проверить", "Check"]

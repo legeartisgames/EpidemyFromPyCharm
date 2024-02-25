@@ -1,5 +1,5 @@
 import sizes
-import common_data
+import common_data as cd
 import textures
 
 from kivy.clock import Clock
@@ -9,10 +9,10 @@ from kivy.uix.label import Label
 from kivy.uix.widget import Widget
 
 def load_ad(instance):
-    common_data.App.get_running_app().ads.show_rewarded_ad()
+    cd.App.get_running_app().ads.show_rewarded_ad()
 
 class Notifier(Widget):
-    def __init__ (self, parent = None, pos = (sizes.Width_of_screen*0.15, sizes.Height_of_screen*0.74), **kwargs):
+    def __init__ (self, parent = None, pos = (sizes.width_res*0.15, sizes.height_res*0.74), **kwargs):
         super(Notifier, self).__init__(**kwargs) 
         self.is_active = None
         self.label = Label(halign = "center")
@@ -21,9 +21,9 @@ class Notifier(Widget):
         self.parent_is = parent
         self.event = Clock.schedule_once(self.hide, 1.5)
         
-        self.size = (sizes.Width_of_screen*0.7, sizes.Height_of_screen*0.2)
+        self.size = (sizes.width_res*0.7, sizes.height_res*0.2)
         self.pos = pos     
-        self.label.font_size = sizes.Width_of_screen/50
+        self.label.font_size = sizes.width_res/50
     def update_size(self, instance, args):
         self.label.size = (self.size[0],self.size[1])
         self.label.pos = (self.pos[0], self.pos[1])
@@ -42,7 +42,7 @@ class Notifier(Widget):
         self.canvas.before.clear()
         with self.canvas.before:
             if typ == 'bad' or typ == 'no money':
-                if typ == 'bad' or common_data.common_var.IS_PREMIUM == True:
+                if typ == 'bad' or cd.common_var.IS_PREMIUM == True:
                     Color(1, 0, 0, 1)
                 else:
                     Color(.9, .9, .9, 1)
@@ -55,11 +55,11 @@ class Notifier(Widget):
                 Color(.1, 1, .1, 1)
             self.rec = Rectangle(size = self.size, pos = self.pos, texture = textures.error_texture)   
                     
-            if typ == 'no money' and common_data.spec_func.is_internet() == True and common_data.common_var.IS_PREMIUM == False:
+            if typ == 'no money' and cd.spec_func.is_internet() == True and cd.common_var.IS_PREMIUM == False:
                 self.btn_ad = Button(text = ['10 монет\nза рекламу',
-                                             '10 coins\nfor ad video'][common_data.common_var.lang],
+                                             '10 coins\nfor ad video'][cd.common_var.lang],
                                      on_release = load_ad,
-                                     font_size = sizes.Width_of_screen/60,
+                                     font_size = sizes.width_res/60,
                                      pos = [self.pos[0]+self.size[0]*0.73, self.pos[1]+self.size[1]*0.1],
                                      size = [self.size[0]*0.25, self.size[1]*0.8],
                                      halign = 'center'
@@ -105,5 +105,5 @@ class Notifier(Widget):
         self.is_active = 0
         self.parent_is.remove_widget(self)
 
-notifier_box = Notifier(parent=common_data.final_layout)
-notifier_box2 = Notifier(parent=common_data.final_layout, pos = (sizes.Width_of_screen*0.19, sizes.Height_of_screen*0.58))
+notifier_box = Notifier(parent=cd.final_layout)
+notifier_box2 = Notifier(parent=cd.final_layout, pos = (sizes.width_res*0.19, sizes.height_res*0.58))
